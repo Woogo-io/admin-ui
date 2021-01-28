@@ -1,11 +1,9 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState, PropsWithChildren } from 'react';
 import clsx from 'clsx';
 
 import theme from '../../theme/default';
 
 type ButtonProps = {
-  children: ReactNode;
-
   size?: 'larger' | 'large' | 'regular' | 'small';
   primary?: boolean;
   outline?: boolean;
@@ -13,8 +11,14 @@ type ButtonProps = {
   block?: boolean;
 };
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { children, size, primary, outline, link, block } = props;
+const Button: FC<PropsWithChildren<ButtonProps>> = ({
+  children,
+  size,
+  primary,
+  outline,
+  link,
+  block,
+}: PropsWithChildren<ButtonProps>) => {
   const [active, setActive] = useState(false);
   return (
     <button
