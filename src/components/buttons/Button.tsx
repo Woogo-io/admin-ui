@@ -1,5 +1,5 @@
-import React, { FC, useState, PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import React, { FC, PropsWithChildren, useState } from 'react';
 
 import theme from '../../theme/default';
 

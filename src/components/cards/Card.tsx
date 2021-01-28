@@ -1,5 +1,5 @@
-import React, { FC, PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
