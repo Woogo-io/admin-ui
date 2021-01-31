@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
-type BadgeProps = {
+export type BadgeProps = {
   type: 'success' | 'danger' | 'warning' | 'neutral' | 'primary';
 };
 

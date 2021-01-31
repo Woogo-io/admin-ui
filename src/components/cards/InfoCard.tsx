@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from 'react';
 import { default as Card } from './Card';
 import { default as CardBody } from './CardBody';
 
-type InfoCardProps = {
+export type InfoCardProps = {
   title: string;
   value: string;
 };

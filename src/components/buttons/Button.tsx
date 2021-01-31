@@ -3,7 +3,9 @@ import React, { FC, PropsWithChildren, useState } from 'react';
 
 import theme from '../../theme/default';
 
-type ButtonProps = {
+export type ButtonProps = {
+  id?: string;
+  testId?: string;
   size?: 'larger' | 'large' | 'regular' | 'small';
   primary?: boolean;
   outline?: boolean;
@@ -13,6 +15,8 @@ type ButtonProps = {
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
+  id,
+  testId,
   size,
   primary,
   outline,
@@ -22,6 +26,8 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   const [active, setActive] = useState(false);
   return (
     <button
+      id={id}
+      data-testid={testId}
       onClick={() => setActive((prevState) => !prevState)}
       className={clsx(
         theme.button,
@@ -45,6 +51,8 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
 };
 
 Button.defaultProps = {
+  id: undefined,
+  testId: undefined,
   size: 'regular',
   primary: false,
   outline: false,

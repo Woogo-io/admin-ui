@@ -6,7 +6,8 @@ import {
   MoonIcon,
   SearchIcon,
   SunIcon,
-} from '../../theme/icons/index.js';
+} from '../../theme/icons';
+
 import { Input } from '../forms';
 import { useSidebar, useTheme } from '../providers';
 

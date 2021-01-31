@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
-type CardBodyProps = {
+export type CardBodyProps = {
   className?: string;
 };
 

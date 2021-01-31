@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
-import * as Icons from '../../theme/icons/index.js';
+import * as Icons from '../../theme/icons/';
 import { SidebarProps } from './Sidebar';
 
 type IconProps = {

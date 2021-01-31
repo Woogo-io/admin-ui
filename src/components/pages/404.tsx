@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { ForbiddenIcon } from '../../theme/icons/index.js';
+import { ForbiddenIcon } from '../../theme/icons/index';
 
 const Page404: FC = () => {
   return (
