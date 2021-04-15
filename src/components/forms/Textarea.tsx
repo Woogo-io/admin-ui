@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
-type TextareaProps = {
+export type TextareaProps = {
   className?: string;
   disabled?: boolean;
   valid?: boolean;

@@ -39,14 +39,17 @@ const ArrowRight = () => {
 type PaginationProps = {
   totalResults: number;
   resultsPerPage: number;
+  currentPage: number;
+  setCurrentPage(i: number): void;
 };
 
 const TablePagination: FC<PaginationProps> = ({
   totalResults,
   resultsPerPage,
+  currentPage,
+  setCurrentPage,
 }: PaginationProps) => {
   const totalPages = Math.floor(totalResults / resultsPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
 
   const paginator = [];
 
@@ -70,6 +73,7 @@ const TablePagination: FC<PaginationProps> = ({
                     : theme.pagination.arrow.active
                 }
                 type="button"
+                onClick={() => setCurrentPage(currentPage - 1)}
               >
                 <ArrowLeft />
               </button>
@@ -99,6 +103,7 @@ const TablePagination: FC<PaginationProps> = ({
                     : theme.pagination.arrow.active
                 }
                 type="button"
+                onClick={() => setCurrentPage(currentPage + 1)}
               >
                 <ArrowRight />
               </button>

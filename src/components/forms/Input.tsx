@@ -3,19 +3,21 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
-type InputProps = {
+export type InputProps = {
+  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
   name?: string;
   className?: string;
   placeholder?: string;
   ariaLabel?: string;
   value?: string;
-  type?: 'text' | 'radio' | 'checkbox' | 'password';
+  type?: 'text' | 'email' | 'radio' | 'checkbox' | 'password';
   disabled?: boolean;
   valid?: boolean;
   invalid?: boolean;
 };
 
 const Input: FC<PropsWithChildren<InputProps>> = ({
+  onChange,
   name,
   className,
   placeholder,
@@ -29,12 +31,13 @@ const Input: FC<PropsWithChildren<InputProps>> = ({
 }: PropsWithChildren<InputProps>) => {
   return (
     <input
+      onChange={onChange}
       name={name}
       type={type}
       value={value}
       disabled={disabled}
       className={clsx(
-        (type === 'text' || type === 'password') && theme.input.base,
+        (type === 'text' || type === 'password' || type === 'email') && theme.input.base,
         type === 'checkbox' && theme.input.checkbox,
         type === 'radio' && theme.input.radio,
         !disabled && !valid && !invalid && theme.input.active,
@@ -52,6 +55,7 @@ const Input: FC<PropsWithChildren<InputProps>> = ({
 };
 
 Input.defaultProps = {
+  onChange: (event: React.FormEvent<HTMLInputElement>) => console.log('Have to implement onChange callback'),
   name: undefined,
   className: undefined,
   placeholder: undefined,

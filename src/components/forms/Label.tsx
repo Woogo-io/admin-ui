@@ -3,7 +3,7 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
-type LabelProps = {
+export type LabelProps = {
   className?: string;
   radio?: boolean;
   disabled?: boolean;

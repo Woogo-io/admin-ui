@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import theme from '../../theme/default';
 
-type SelectProps = {
+export type SelectProps = {
   className?: string;
   disabled?: boolean;
   multiple?: boolean;
