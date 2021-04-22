@@ -60,7 +60,7 @@ const TablePagination: FC<PaginationProps> = ({
   return (
     <div className={theme.pagination.base}>
       <span className="flex items-center font-semibold tracking-wide uppercase">
-        Showing 1 - 10 of 12
+        Showing 1 - 10 of {totalResults}
       </span>
       <div className="flex mt-2 sm:mt-auto sm:justify-end">
         <nav>
