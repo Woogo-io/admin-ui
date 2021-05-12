@@ -49,18 +49,18 @@ const TablePagination: FC<PaginationProps> = ({
   currentPage,
   setCurrentPage,
 }: PaginationProps) => {
-  const totalPages = Math.floor(totalResults / resultsPerPage);
+  const totalPages = Math.ceil(totalResults / resultsPerPage);
 
   const paginator = [];
 
-  for (let i = 1; i <= totalPages; i += 1) {
+  for (let i = 0; i < totalPages; i += 1) {
     paginator.push(i);
   }
 
   return (
     <div className={theme.pagination.base}>
       <span className="flex items-center font-semibold tracking-wide uppercase">
-        Showing 1 - 10 of {totalResults}
+        Showing {(currentPage * resultsPerPage) + 1} - {(currentPage * resultsPerPage) + resultsPerPage} of {totalResults}
       </span>
       <div className="flex mt-2 sm:mt-auto sm:justify-end">
         <nav>
@@ -68,11 +68,12 @@ const TablePagination: FC<PaginationProps> = ({
             <li>
               <button
                 className={
-                  currentPage === 1
+                  currentPage === 0
                     ? theme.pagination.arrow.inactive
                     : theme.pagination.arrow.active
                 }
                 type="button"
+                disabled={currentPage === 0}
                 onClick={() => setCurrentPage(currentPage - 1)}
               >
                 <ArrowLeft />
@@ -91,18 +92,19 @@ const TablePagination: FC<PaginationProps> = ({
                     type="button"
                     onClick={() => setCurrentPage(i)}
                   >
-                    {i}
+                    {i+1}
                   </button>
                 </li>
               ))}
             <li>
               <button
                 className={
-                  currentPage >= totalPages
+                  currentPage + 1 >= totalPages
                     ? theme.pagination.arrow.inactive
                     : theme.pagination.arrow.active
                 }
                 type="button"
+                disabled={currentPage + 1 >= totalPages}
                 onClick={() => setCurrentPage(currentPage + 1)}
               >
                 <ArrowRight />
