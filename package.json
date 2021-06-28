@@ -1,14 +1,14 @@
 {
-  "name": "react-ui-admin",
+  "name": "@woogo/admin-ui",
   "version": "1.0.0",
   "description": "A taillwind library with react components",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "buildd": "tsc --emitDeclarationOnly",
+    "build:declaration": "tsc --emitDeclarationOnly",
     "test": "jest",
     "test:watch": "jest --watch",
-    "deploy": "yarn build && yarn buildd"
+    "deploy": "yarn build && npm publish"
   },
   "eslintConfig": {
     "extends": [
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Woogo-io/react-ui-admin.git"
+    "url": "git+https://github.com/Woogo-io/admin-ui"
   },
   "keywords": [
     "React",
@@ -25,12 +25,11 @@
     "Components",
     "CSS"
   ],
-  "author": "Woogo.io",
-  "license": "UNLICENSED",
+  "author": "woogo",
   "bugs": {
-    "url": "https://github.com/Woogo-io/react-ui-admin/issues"
+    "url": "https://github.com/Woogo-io/admin-ui/issues"
   },
-  "homepage": "https://github.com/Woogo-io/react-ui-admin#readme",
+  "homepage": "https://github.com/Woogo-io/admin-ui#readme",
   "peerDependencies": {
     "react": "^17.0.1",
     "tailwindcss": "2.0.1-compat"
@@ -42,7 +41,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",
-    "@types/jest": "^24.0.22",
+    "@types/jest": "^24.9.1",
     "@types/react": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
     "autoprefixer": "^7",
@@ -56,5 +55,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
   },
-  "private": true
+  "publishConfig": {
+    "access": "restricted"
+  }
 }
