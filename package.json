@@ -1,6 +1,6 @@
 {
   "name": "@woogo/admin-ui",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A taillwind library with react components",
   "main": "dist/index.js",
   "scripts": {
@@ -55,6 +55,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
   },
+  "license": "UNLICENSED",
   "publishConfig": {
     "access": "restricted"
   }

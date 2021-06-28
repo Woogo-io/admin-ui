@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactChildren } from 'react';
 
 import { default as SidebarContent } from './SidebarContent';
 
@@ -9,6 +9,7 @@ export type SidebarProps = {
     path: string;
     icon: string;
     name: string;
+    children: ReactChildren
   }[];
 };
 
