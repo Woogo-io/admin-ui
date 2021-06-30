@@ -46,7 +46,8 @@ export const DefaultNext = () => (
     <SidebarProvider>
 
       <Sidebar website="Admin" url="//">
-        <NextLinkMenu to="/" icon="BellIcon" name="Test" />
+        <NextLinkMenu to="/" icon="BellIcon" name="Test" isActive />
+        <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
       </Sidebar>
 
       <Header />
