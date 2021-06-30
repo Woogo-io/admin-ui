@@ -13,7 +13,7 @@ Version ```1.1.2```
 ## Sample
 
 ### Next.js
-```typescript
+```tsx
 <ThemeProvider>
   <SidebarProvider>
 
@@ -40,7 +40,7 @@ Version ```1.1.2```
 ```
 
 ### React
-```typescript
+```tsx
 <ThemeProvider>
   <SidebarProvider>
     <Router>
