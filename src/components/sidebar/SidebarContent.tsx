@@ -19,7 +19,7 @@ const Icon = (props: IconProps) => {
 };
 
 const SidebarContent: FC<SidebarProps> = ({
-  routes,
+  children,
   website,
   url,
 }: SidebarProps) => {
@@ -32,9 +32,8 @@ const SidebarContent: FC<SidebarProps> = ({
         {website}
       </a>
       <ul className="mt-6">
-        {routes.map((route) => (
-          <li className="relative px-6 py-3" key={route.name}>
-            {/* <NavLink
+          {/* <li className="relative px-6 py-3" key={route.name}>
+            <NavLink
               exact
               to={route.path}
               className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -48,10 +47,9 @@ const SidebarContent: FC<SidebarProps> = ({
               </Route>
               <Icon className="w-5 h-5" ariaHidden="true" icon={route.icon} />
               <span className="ml-4">{route.name}</span>
-            </NavLink> */}
-            {route.children}
-          </li>
-        ))}
+            </NavLink>
+          </li> */}
+        {children}
       </ul>
     </div>
   );

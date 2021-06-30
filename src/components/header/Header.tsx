@@ -24,7 +24,7 @@ const Header: FC = () => {
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
         <button
           className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
-          onClick={() => console.log('click')}
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           aria-label="Menu"
           type="button"
         >
@@ -60,7 +60,7 @@ const Header: FC = () => {
           <li className="relative">
             <button
               className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              onClick={() => console.log('Notification Click')}
               aria-label="Notifications"
               aria-haspopup="true"
               type="button"
@@ -75,7 +75,7 @@ const Header: FC = () => {
           <li className="relative">
             <button
               className="rounded-full focus:shadow-outline-purple focus:outline-none"
-              onClick={() => console.log('click')}
+              onClick={() => console.log('Account Click')}
               aria-label="Account"
               aria-haspopup="true"
               type="button"

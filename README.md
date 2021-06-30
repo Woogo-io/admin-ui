@@ -4,11 +4,17 @@
 
 Private ✔️
 
-Version ```1.1.1```
+Version ```1.1.2```
 
 ## Require
  - Tailwind
  - React / Next
+
+## Sample
+
+```typescript
+
+```
 
 ## List Components
 - Badges

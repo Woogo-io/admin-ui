@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "dist",
     "lib": ["es2015", "dom"],
@@ -8,6 +8,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true,
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }

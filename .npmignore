@@ -2,3 +2,6 @@
 .prettierrc.js
 .gitignore
 .eslintrc
+.storybook
+stories
+tailwind.config.js
