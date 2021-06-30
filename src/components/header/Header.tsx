@@ -20,7 +20,7 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
+    <header className="relative z-20 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
         <button
           className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
@@ -79,7 +79,7 @@ const Header: FC = () => {
               aria-label="Account"
               aria-haspopup="true"
               type="button"
-            ></button>
+            />
           </li>
         </ul>
       </div>

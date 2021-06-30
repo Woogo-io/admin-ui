@@ -4,8 +4,6 @@ import theme from '../../theme/default';
 
 const TableFooter: FC<PropsWithChildren<unknown>> = ({
   children,
-}: PropsWithChildren<unknown>) => {
-  return <div className={theme.tableFooter.base}>{children}</div>;
-};
+}: PropsWithChildren<unknown>) => <div className={theme.tableFooter.base}>{children}</div>;
 
 export default TableFooter;

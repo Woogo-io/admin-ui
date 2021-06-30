@@ -16,22 +16,20 @@ const Label: FC<PropsWithChildren<LabelProps>> = ({
   radio,
   disabled,
   check,
-}: PropsWithChildren<LabelProps>) => {
-  return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label
-      className={clsx(
-        theme.label.base,
-        className,
-        radio && 'inline-flex items-center',
-        disabled && theme.label.disabled,
-        check && theme.label.check,
-      )}
-    >
-      {children}
-    </label>
-  );
-};
+}: PropsWithChildren<LabelProps>) => (
+  // eslint-disable-next-line jsx-a11y/label-has-associated-control
+  <label
+    className={clsx(
+      theme.label.base,
+      className,
+      radio && 'inline-flex items-center',
+      disabled && theme.label.disabled,
+      check && theme.label.check,
+    )}
+  >
+    {children}
+  </label>
+);
 
 Label.defaultProps = {
   className: '',

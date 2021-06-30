@@ -1,6 +1,8 @@
-import React, { FC, PropsWithChildren, useContext, useState } from 'react';
+import React, {
+  FC, PropsWithChildren, useContext, useState,
+} from 'react';
 
-import { default as SidebarContext } from '../contexts/SidebarContext';
+import SidebarContext from '../contexts/SidebarContext';
 
 export const SidebarProvider: FC<PropsWithChildren<{}>> = ({
   children,

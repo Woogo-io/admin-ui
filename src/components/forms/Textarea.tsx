@@ -20,25 +20,23 @@ const Textarea: FC<PropsWithChildren<TextareaProps>> = ({
   rows,
   placeholder,
   children,
-}: PropsWithChildren<TextareaProps>) => {
-  return (
-    <textarea
-      disabled={disabled}
-      rows={rows}
-      placeholder={placeholder}
-      className={clsx(
-        theme.textarea.base,
-        !disabled && !invalid && !valid && theme.textarea.active,
-        disabled && theme.textarea.disabled,
-        valid && theme.textarea.valid,
-        invalid && theme.textarea.invalid,
-        className,
-      )}
-    >
-      {children}
-    </textarea>
-  );
-};
+}: PropsWithChildren<TextareaProps>) => (
+  <textarea
+    disabled={disabled}
+    rows={rows}
+    placeholder={placeholder}
+    className={clsx(
+      theme.textarea.base,
+      !disabled && !invalid && !valid && theme.textarea.active,
+      disabled && theme.textarea.disabled,
+      valid && theme.textarea.valid,
+      invalid && theme.textarea.invalid,
+      className,
+    )}
+  >
+    {children}
+  </textarea>
+);
 
 Textarea.defaultProps = {
   className: undefined,

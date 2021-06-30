@@ -18,25 +18,23 @@ const Select: FC<PropsWithChildren<SelectProps>> = ({
   valid,
   invalid,
   children,
-}: PropsWithChildren<SelectProps>) => {
-  return (
-    <select
-      disabled={disabled}
-      multiple={multiple}
-      className={clsx(
-        theme.select.base,
-        !disabled && !valid && !invalid && theme.select.active,
-        multiple && theme.select.multiple,
-        disabled && theme.select.disabled,
-        valid && theme.select.valid,
-        invalid && theme.select.invalid,
-        className,
-      )}
-    >
-      {children}
-    </select>
-  );
-};
+}: PropsWithChildren<SelectProps>) => (
+  <select
+    disabled={disabled}
+    multiple={multiple}
+    className={clsx(
+      theme.select.base,
+      !disabled && !valid && !invalid && theme.select.active,
+      multiple && theme.select.multiple,
+      disabled && theme.select.disabled,
+      valid && theme.select.valid,
+      invalid && theme.select.invalid,
+      className,
+    )}
+  >
+    {children}
+  </select>
+);
 
 Select.defaultProps = {
   className: undefined,

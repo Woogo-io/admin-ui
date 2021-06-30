@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FC, PropsWithChildren, useState } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
 
@@ -29,40 +29,37 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   outline,
   link,
   block,
-  className
-}: PropsWithChildren<ButtonProps>) => {
-  //const [active, setActive] = useState(false);
-  return (
-    <button
-      id={id}
-      data-testid={testId}
-      onClick={onClick}
-      className={clsx(
-        theme.button,
-        size && theme.button.size[size],
-        primary && [
-          theme.button.primary.base,
-          active && theme.button.primary.active,
-        ],
-        outline && [
-          theme.button.outline.base,
-          active && theme.button.outline.active,
-        ],
-        link && [theme.button.link.base, active && theme.button.link.active],
-        // link && [theme.button.link.base],
-        block && theme.button.block,
-        className
-      )}
-      type={type}
-    >
-      {children}
-    </button>
-  );
-};
-
+  className,
+}: PropsWithChildren<ButtonProps>) => (
+  <button
+    id={id}
+    data-testid={testId}
+    onClick={onClick}
+    className={clsx(
+      theme.button,
+      size && theme.button.size[size],
+      primary && [
+        theme.button.primary.base,
+        active && theme.button.primary.active,
+      ],
+      outline && [
+        theme.button.outline.base,
+        active && theme.button.outline.active,
+      ],
+      link && [theme.button.link.base, active && theme.button.link.active],
+      // link && [theme.button.link.base],
+      block && theme.button.block,
+      className,
+    )}
+      // eslint-disable-next-line react/button-has-type
+    type={type || 'button'}
+  >
+    {children}
+  </button>
+);
 Button.defaultProps = {
   active: false,
-  onClick: (e: any) => console.log('Have to implement onClick callback'),
+  onClick: () => console.log('Have to implement onClick callback'),
   id: undefined,
   testId: undefined,
   type: 'button',
@@ -71,7 +68,7 @@ Button.defaultProps = {
   outline: false,
   link: false,
   block: false,
-  className: undefined
+  className: undefined,
 };
 
 export default Button;

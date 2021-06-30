@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
 
 import theme from '../../theme/default';
 
@@ -16,7 +16,7 @@ export type InputProps = {
   invalid?: boolean;
 };
 
-const Input: FC<PropsWithChildren<InputProps>> = ({
+const Input: FC<InputProps> = ({
   onChange,
   name,
   className,
@@ -27,35 +27,30 @@ const Input: FC<PropsWithChildren<InputProps>> = ({
   invalid,
   type,
   value,
-  children,
-}: PropsWithChildren<InputProps>) => {
-  return (
-    <input
-      onChange={onChange}
-      name={name}
-      type={type}
-      value={value}
-      disabled={disabled}
-      className={clsx(
-        (type === 'text' || type === 'password' || type === 'email') && theme.input.base,
-        type === 'checkbox' && theme.input.checkbox,
-        type === 'radio' && theme.input.radio,
-        !disabled && !valid && !invalid && theme.input.active,
-        valid && theme.input.valid,
-        invalid && theme.input.invalid,
-        className,
-        disabled && theme.input.disabled,
-      )}
-      placeholder={placeholder}
-      aria-label={ariaLabel}
-    >
-      {children}
-    </input>
-  );
-};
+}: InputProps) => (
+  <input
+    onChange={onChange}
+    name={name}
+    type={type}
+    value={value}
+    disabled={disabled}
+    className={clsx(
+      (type === 'text' || type === 'password' || type === 'email') && theme.input.base,
+      type === 'checkbox' && theme.input.checkbox,
+      type === 'radio' && theme.input.radio,
+      !disabled && !valid && !invalid && theme.input.active,
+      valid && theme.input.valid,
+      invalid && theme.input.invalid,
+      className,
+      disabled && theme.input.disabled,
+    )}
+    placeholder={placeholder}
+    aria-label={ariaLabel}
+  />
+);
 
 Input.defaultProps = {
-  onChange: (event: React.FormEvent<HTMLInputElement>) => console.log('Have to implement onChange callback'),
+  onChange: () => console.log('Have to implement onChange callback'),
   name: undefined,
   className: undefined,
   placeholder: undefined,

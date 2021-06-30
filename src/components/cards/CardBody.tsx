@@ -10,9 +10,7 @@ export type CardBodyProps = {
 const CardBody: FC<PropsWithChildren<CardBodyProps>> = ({
   className,
   children,
-}: PropsWithChildren<CardBodyProps>) => {
-  return <div className={clsx(theme.cardBody.base, className)}>{children}</div>;
-};
+}: PropsWithChildren<CardBodyProps>) => <div className={clsx(theme.cardBody.base, className)}>{children}</div>;
 
 CardBody.defaultProps = {
   className: '',
