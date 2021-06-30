@@ -11,7 +11,11 @@ import {
 import { Input } from '../forms';
 import { useSidebar, useTheme } from '../providers';
 
-const Header: FC = () => {
+interface HeaderProps {
+  appName: string;
+}
+
+const Header: FC<HeaderProps> = ({ appName }: HeaderProps) => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
   const { theme, toggleTheme } = useTheme();
 
@@ -20,8 +24,8 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="relative z-20 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16">
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+    <header className="relative z-20 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16 border-b border-purple-600">
+      <div className="flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300 w-full">
         <button
           className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -30,7 +34,14 @@ const Header: FC = () => {
         >
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
-        <div className="flex justify-center flex-1 lg:mr-32">
+
+        <div
+          className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+        >
+          {appName}
+        </div>
+
+        <div className="hidden lg:flex justify-center flex-1 lg:mr-32">
           <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
             <div className="absolute inset-y-0 flex items-center pl-2">
               <SearchIcon className="w-4 h-4" aria-hidden="true" />

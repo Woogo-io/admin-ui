@@ -3,5 +3,8 @@
 .gitignore
 .eslintrc
 .storybook
-stories
 tailwind.config.js
+postcss.config.js
+jest.config.js
+yarn.lock
+tsconfig.json

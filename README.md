@@ -4,7 +4,7 @@
 
 Private ✔️
 
-Version ```1.1.2```
+Version ```1.1.3```
 
 ## Require
  - Tailwind
@@ -17,12 +17,12 @@ Version ```1.1.2```
 <ThemeProvider>
   <SidebarProvider>
 
-    <Sidebar website="Admin" url="//">
+    <Sidebar>
       <NextLinkMenu to="/" icon="BellIcon" name="Test" isActive />
       <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
     </Sidebar>
 
-    <Header />
+    <Header appName="Woogo UI" />
     <MainContainer>
 
       <PageTitle>Dashboard</PageTitle>
@@ -45,11 +45,11 @@ Version ```1.1.2```
   <SidebarProvider>
     <Router>
 
-      <Sidebar website="Admin" url="//">
+      <Sidebar>
         <ReactLinkMenu to="/" icon="BellIcon" name="Test" />
       </Sidebar>
 
-      <Header />
+      <Header appName="Woogo UI" />
       <MainContainer>
 
         <PageTitle>Dashboard</PageTitle>
@@ -81,5 +81,5 @@ Version ```1.1.2```
 - Icons
 
 ## Author
-Justin Wauquier
-Valentin Gauthey
+- Justin Wauquier
+- Valentin Gauthey

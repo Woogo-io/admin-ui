@@ -11,7 +11,6 @@ import Header from '../components/header/Header';
 
 export default {
   title: 'Sample/DefaultPage',
-  component: Header,
 };
 
 export const DefaultReact = () => (
@@ -19,11 +18,11 @@ export const DefaultReact = () => (
     <SidebarProvider>
       <Router>
 
-        <Sidebar website="Admin" url="//">
+        <Sidebar>
           <ReactLinkMenu to="/" icon="BellIcon" name="Test" />
         </Sidebar>
 
-        <Header />
+        <Header appName="Woogo UI" />
         <MainContainer>
 
           <PageTitle>Dashboard</PageTitle>
@@ -45,12 +44,12 @@ export const DefaultNext = () => (
   <ThemeProvider>
     <SidebarProvider>
 
-      <Sidebar website="Admin" url="//">
+      <Sidebar>
         <NextLinkMenu to="/" icon="BellIcon" name="Test" isActive />
         <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
       </Sidebar>
 
-      <Header />
+      <Header appName="Woogo UI" />
       <MainContainer>
 
         <PageTitle>Dashboard</PageTitle>
