@@ -10,7 +10,7 @@
     "build:storybook": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
-    "deploy": "yarn build && npm publish",
+    "deploy": "yarn build && npm publish --access public",
     "storybook": "start-storybook -p 6006"
   },
   "eslintConfig": {
@@ -76,5 +76,5 @@
     "tsc-watch": "^4.4.0",
     "typescript": "^4.1.3"
   },
-  "license": "Apache 2.0"
+  "license": "Apache-2.0"
 }
