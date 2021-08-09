@@ -1,10 +1,7 @@
 # Admin UI
 [![https://nodei.co/npm/@woogo/admin-ui.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@woogo/admin-ui.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@woogo/admin-ui)
 
-
-Private ✔️
-
-Version ```1.1.3```
+Version ```1.1.4```
 
 ## Require
  - Tailwind
@@ -83,3 +80,7 @@ Version ```1.1.3```
 ## Author
 - Justin Wauquier
 - Valentin Gauthey
+
+## Licence
+
+``Apache 2.0``
