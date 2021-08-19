@@ -9,7 +9,6 @@ import theme from '../theme/default';
 const renderButton = (props: Partial<ButtonProps> = {}) => {
   const defaultProps: ButtonProps = {
     size: 'regular',
-    testId: 'test-button',
   };
   return render(
     <Button {...defaultProps} {...props}>
@@ -23,7 +22,7 @@ describe('<Button>Test button</Button>', () => {
     const { findByTestId } = renderButton();
     const buttonTest = await findByTestId('test-button');
     expect(buttonTest.className).toEqual(
-      clsx(theme.button, theme.button.size['regular']),
+      clsx(theme.button, theme.button.size.regular),
     );
   });
 });

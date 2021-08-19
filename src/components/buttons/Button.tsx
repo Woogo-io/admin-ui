@@ -4,70 +4,49 @@ import React, { FC, PropsWithChildren } from 'react';
 import theme from '../../theme/default';
 
 export type ButtonProps = {
-  active?: boolean;
+  disabled?: boolean;
   onClick?: (e: any) => void;
   id?: string;
-  testId?: string;
-  type?: 'button' | 'submit';
-  size?: 'larger' | 'large' | 'regular' | 'small';
-  primary?: boolean;
-  outline?: boolean;
-  link?: boolean;
-  block?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  size?: 'larger' | 'large' | 'regular' | 'small' | 'normal';
+  styleType?: 'primary' | 'outline' | 'link'
   className?: string;
 };
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
-  active,
+  disabled,
   onClick,
   id,
-  testId,
   type,
   size,
-  primary,
-  outline,
-  link,
-  block,
+  styleType,
   className,
 }: PropsWithChildren<ButtonProps>) => (
   <button
     id={id}
-    data-testid={testId}
     onClick={onClick}
+    type={type}
     className={clsx(
-      theme.button,
-      size && theme.button.size[size],
-      primary && [
-        theme.button.primary.base,
-        active && theme.button.primary.active,
-      ],
-      outline && [
-        theme.button.outline.base,
-        active && theme.button.outline.active,
-      ],
-      link && [theme.button.link.base, active && theme.button.link.active],
-      // link && [theme.button.link.base],
-      block && theme.button.block,
+      theme.button.base,
+      theme.button.size[size],
+      theme.button[styleType],
+      disabled && 'cursor-not-allowed',
       className,
     )}
-      // eslint-disable-next-line react/button-has-type
-    type={type || 'button'}
+    disabled={disabled}
   >
     {children}
   </button>
 );
+
 Button.defaultProps = {
-  active: false,
-  onClick: () => console.log('Have to implement onClick callback'),
+  onClick: undefined,
   id: undefined,
-  testId: undefined,
+  disabled: false,
   type: 'button',
+  styleType: 'primary',
   size: 'regular',
-  primary: false,
-  outline: false,
-  link: false,
-  block: false,
   className: undefined,
 };
 

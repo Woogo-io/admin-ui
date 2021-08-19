@@ -1,11 +1,12 @@
 # Admin UI
-[![https://nodei.co/npm/@woogo/admin-ui.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@woogo/admin-ui.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@woogo/admin-ui)
-
-Version ```1.1.4```
+## Contributing 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![npm version](https://img.shields.io/npm/v/@woogo/admin-ui.svg?style=flat)](https://www.npmjs.com/package/@woogo/admin-ui)
 
 ## Require
  - Tailwind
  - React / Next
+ - Formik
 
 ## Sample
 
@@ -19,16 +20,34 @@ Version ```1.1.4```
       <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
     </Sidebar>
 
-    <Header appName="Woogo UI" />
+    <Header title="Woogo UI" haveNotification/>
     <MainContainer>
 
       <PageTitle>Dashboard</PageTitle>
       <SectionTitle>Summary</SectionTitle>
 
       <div className="container grid grid-cols-4 gap-4">
-        <InfoCard title="Users Account" value="566" />
-        <InfoCard title="Pure Benefice" value="+8500€" />
-        <InfoCard title="Open Box" value="98500" />
+        <InfoCard title="Users Account">556</InfoCard>
+        <InfoCard title="Pure Benefice">+8500€</InfoCard>
+        <InfoCard title="Open Box">5</InfoCard>
+      </div>
+
+      <div className="space-x-5 mt-5">
+        <Button styleType="primary">Primary</Button>
+        <Button styleType="primary" size="small">Small</Button>
+        <Button styleType="outline">Outline</Button>
+        <Button styleType="link">Link</Button>
+        <Button styleType="primary" disabled>Primary Disabled</Button>
+        <Button styleType="outline" disabled>Outline Disabled</Button>
+        <Button styleType="link" disabled>Link Disabled</Button>
+      </div>
+
+      <div className="mt-5 space-x-5">
+        <Badge type="primary">Primary</Badge>
+        <Badge type="neutral">Neutral</Badge>
+        <Badge type="danger">Danger</Badge>
+        <Badge type="success">Success</Badge>
+        <Badge type="warning">Warning</Badge>
       </div>
 
     </MainContainer>
@@ -46,16 +65,34 @@ Version ```1.1.4```
         <ReactLinkMenu to="/" icon="BellIcon" name="Test" />
       </Sidebar>
 
-      <Header appName="Woogo UI" />
+      <Header title="Woogo UI" haveNotification/>
       <MainContainer>
 
         <PageTitle>Dashboard</PageTitle>
         <SectionTitle>Summary</SectionTitle>
 
         <div className="container grid grid-cols-4 gap-4">
-          <InfoCard title="Users Account" value="566" />
-          <InfoCard title="Pure Benefice" value="+8500€" />
-          <InfoCard title="Open Box" value="98500" />
+          <InfoCard title="Users Account">556</InfoCard>
+          <InfoCard title="Pure Benefice">+8500€</InfoCard>
+          <InfoCard title="Open Box">5</InfoCard>
+        </div>
+
+        <div className="space-x-5 mt-5">
+          <Button styleType="primary">Primary</Button>
+          <Button styleType="primary" size="small">Small</Button>
+          <Button styleType="outline">Outline</Button>
+          <Button styleType="link">Link</Button>
+          <Button styleType="primary" disabled>Primary Disabled</Button>
+          <Button styleType="outline" disabled>Outline Disabled</Button>
+          <Button styleType="link" disabled>Link Disabled</Button>
+        </div>
+
+        <div className="mt-5 space-x-5">
+          <Badge type="primary">Primary</Badge>
+          <Badge type="neutral">Neutral</Badge>
+          <Badge type="danger">Danger</Badge>
+          <Badge type="success">Success</Badge>
+          <Badge type="warning">Warning</Badge>
         </div>
 
       </MainContainer>
@@ -71,7 +108,6 @@ Version ```1.1.4```
 - Contexts
 - Froms
 - Header
-- Pages
 - Sidebar
 - Tables
 - Titles

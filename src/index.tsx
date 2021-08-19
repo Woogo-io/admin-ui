@@ -4,7 +4,7 @@ export * from './components/cards';
 export * from './components/contexts';
 export * from './components/forms';
 export * from './components/header';
-export * from './components/pages';
+export * from './components/404';
 export * from './components/providers';
 export * from './components/sidebar';
 export * from './components/tables';

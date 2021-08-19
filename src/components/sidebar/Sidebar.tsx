@@ -8,8 +8,8 @@ const Sidebar: FC<PropsWithChildren<{}>> = (props: PropsWithChildren<{}>) => {
   const { isSidebarOpen } = useSidebar();
   return (
     <aside className={clsx('z-10 flex-shrink-0 w-64 overflow-y-auto bg-white dark:bg-gray-800',
-      'lg:block fixed top-0 pt-16 left-0 h-full',
-      !isSidebarOpen && 'hidden')}
+      'fixed top-0 pt-16 left-0 h-full transition-all transform',
+      !isSidebarOpen && '-translate-x-64')}
     >
       <SidebarContent {...props} />
     </aside>

@@ -116,7 +116,7 @@ export default {
     success:
       'text-green-700 bg-green-100 dark:bg-green-700 dark:text-green-100',
     danger: 'text-red-700 bg-red-100 dark:text-red-100 dark:bg-red-700',
-    warning: 'text-orange-700 bg-orange-100 dark:text-white dark:bg-orange-600',
+    warning: 'text-yellow-700 bg-yellow-100 dark:text-white dark:bg-yellow-600',
     neutral: 'text-gray-700 bg-gray-100 dark:text-gray-100 dark:bg-gray-700',
     primary: 'text-purple-700 bg-purple-100 dark:text-white dark:bg-purple-600',
   },
@@ -136,41 +136,95 @@ export default {
     invalid:
       'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red',
   },
-  // Select
-  select: {
-    base: 'block w-full text-sm dark:text-gray-300 focus:outline-none rounded',
-    active:
-      'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:shadow-outline-purple dark:focus:shadow-outline-gray dark:focus:border-gray-600',
-    select: 'form-select leading-5',
-    multiple: 'form-multiselect',
-    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
-    valid:
-      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:shadow-outline-green dark:focus:shadow-outline-green',
-    invalid:
-      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red',
-  },
-  // Label
   label: {
-    base: 'block text-sm text-gray-700 dark:text-gray-400',
-    // check and radio get this same style
-    check: 'inline-flex items-center',
-    disabled: 'opacity-50 cursor-not-allowed',
+    classic: [
+      'block text-sm',
+      'text-gray-700',
+      'dark:text-gray-400',
+      'disabled:opacity-50',
+    ],
+    checkbox: [
+      'text-gray-700',
+      'dark:text-gray-400',
+      'flex',
+      'items-center',
+      'space-x-2',
+    ],
+    radio: [
+      'text-gray-700',
+      'dark:text-gray-400',
+      'flex',
+      'items-center',
+      'space-x-2',
+    ],
+  },
+
+  formGroup: {
+    classic: [
+      'block',
+      'space-y-2',
+    ],
+    checkbox: null,
+    radio: [
+
+    ],
   },
   // Input
   input: {
-    base:
-      'block w-full text-sm focus:outline-none dark:text-gray-300 leading-5 rounded',
-    active:
-      'focus:border-purple-400 dark:border-gray-600 focus:shadow-outline-purple dark:focus:border-gray-600 dark:focus:shadow-outline-gray dark:bg-gray-700',
-    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
-    valid:
-      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:shadow-outline-green dark:focus:shadow-outline-green',
-    invalid:
-      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red',
-    radio:
-      'text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
-    checkbox:
-      'text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray rounded',
+    classic: [
+      'block w-full text-sm dark:text-white rounded',
+      'focus:border-purple-400',
+      'dark:border-gray-600',
+      'focus:ring-purple-600',
+      'dark:focus:border-purple-600',
+      'dark:bg-gray-700',
+      'dark:focus:ring-purple-600',
+      'disabled:opacity-50',
+    ],
+    invalid: [
+      'block w-full text-sm dark:text-white rounded',
+      'focus:border-red-500',
+      'border-red-500',
+      'focus:ring-red-500',
+      'dark:focus:border-red-500',
+      'dark:bg-gray-700',
+      'dark:focus:ring-red-500',
+    ],
+  },
+  radio: {
+    classic: [
+      'text-purple-600',
+      'focus:border-purple-400',
+      'focus:ring-purple-600',
+      'dark:focus:ring-purple-600',
+    ],
+    invalid: [
+      'text-purple-600',
+      'border-red-500',
+      'focus:border-red-500',
+      'focus:ring-red-500',
+      'dark:focus:ring-red-500',
+    ],
+  },
+
+  checkbox: {
+    classic: [
+      'text-purple-600',
+      'focus:border-purple-400',
+      'focus:ring-purple-600',
+      'dark:focus:ring-purple-600',
+      'focus:ring-1',
+      'rounded',
+    ],
+    invalid: [
+      'text-purple-600',
+      'border-red-500',
+      'focus:border-red-500',
+      'focus:ring-purple-600',
+      'dark:focus:ring-purple-600',
+      'focus:ring-1',
+      'rounded',
+    ],
   },
   // HelperText
   helperText: {
@@ -189,13 +243,14 @@ export default {
   // Button
   button: {
     base:
-      'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none',
+      'align-bottom inline-flex items-center justify-center cursor-pointer transition-colors duration-150 font-medium focus:outline-none max-h',
     block: 'w-full',
     size: {
-      larger: 'px-10 py-4 rounded-lg',
-      large: 'px-5 py-3 rounded-lg',
-      regular: 'px-4 py-2 rounded-lg text-sm',
-      small: 'px-3 py-1 rounded-md text-sm',
+      larger: 'px-10 py-4 rounded',
+      large: 'px-5 py-3 rounded',
+      regular: 'px-4 py-2 rounded text-sm',
+      small: 'px-3 py-1 rounded text-sm',
+      normal: '',
       icon: {
         larger: 'p-4 rounded-lg',
         large: 'p-3 rounded-lg',
@@ -213,26 +268,34 @@ export default {
       left: 'mr-2 -ml-1',
       right: 'ml-2 -mr-1',
     },
-    primary: {
-      base:
-        'text-white bg-purple-600 border border-transparent hover:bg-purple-700 focus:shadow-outline-purple',
-      active: 'active:bg-purple-600',
-      disabled: 'opacity-50 cursor-not-allowed',
-    },
-    outline: {
-      base:
-        'text-gray-600 border-gray-300 border dark:text-gray-400 focus:outline-none',
-      active:
-        'active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:shadow-outline-gray',
-      disabled: 'opacity-50 cursor-not-allowed bg-gray-300',
-    },
-    link: {
-      base:
-        'text-gray-600 dark:text-gray-400 focus:outline-none border border-transparent',
-      active:
-        'active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10',
-      disabled: 'opacity-50 cursor-not-allowed',
-    },
+    primary: [
+      'text-white',
+      'bg-purple-600',
+      'border border-transparent',
+      'hover:bg-purple-700',
+      'focus:shadow-outline-purple',
+      'active:bg-purple-600',
+      'disabled:opacity-50',
+    ],
+    outline: [
+      'text-gray-600',
+      'border-gray-300',
+      'border',
+      'dark:text-white',
+      'focus:outline-none',
+      'active:bg-transparent',
+      'hover:border-gray-500',
+      'focus:border-gray-500',
+      'active:text-gray-500',
+      'focus:shadow-outline-gray',
+      'disabled:opacity-50',
+    ],
+    link: [
+      'text-purple-600',
+      'hover:underline',
+      'dark:text-purple-400',
+      'disabled:opacity-50',
+    ],
     // this is the button that lives inside the DropdownItem
     dropdownItem: {
       base:
