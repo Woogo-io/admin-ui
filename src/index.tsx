@@ -11,4 +11,5 @@ export * from './components/tables';
 export * from './components/titles';
 export * from './components/container';
 export * from './components/link';
+export * from './components/modal';
 export * from './theme/icons';

@@ -94,21 +94,27 @@ export default {
   },
   // Modal
   modal: {
+    background: 'opacity-25 fixed inset-0 z-40 bg-black',
     base:
-      'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+      'justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none',
+    sizer: 'relative w-full my-6 mx-auto',
+    content: 'border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 outline-none focus:outline-none',
+  },
+  // ModalHeader
+  modalHeader: {
+    base: 'flex items-start justify-between p-5 border-b border-solid border-purple-600 rounded-t bg-gray-50 dark:bg-gray-800',
+    title: 'text-xl font-semibold text-black dark:text-white',
+    closeButton: 'p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none',
+    closeCross: 'bg-transparent text-black dark:text-white opacity-5 h-6 w-6 block outline-none focus:outline-none'
   },
   // ModalBody
   modalBody: {
-    base: 'mb-6 text-sm text-gray-700 dark:text-gray-400',
+    base: 'relative p-6 flex-auto text-black dark:text-white',
   },
   // ModalFooter
   modalFooter: {
     base:
-      'flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800',
-  },
-  // ModalHeader
-  modalHeader: {
-    base: 'mt-4 mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300',
+      'flex items-center justify-end p-6 border-t border-solid border-purple-600 rounded-b bg-gray-50 dark:bg-gray-800 space-x-2',
   },
   // Badge
   badge: {
