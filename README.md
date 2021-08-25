@@ -1,5 +1,4 @@
 # Admin UI
-## Contributing 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![npm version](https://img.shields.io/npm/v/@woogo/admin-ui.svg?style=flat)](https://www.npmjs.com/package/@woogo/admin-ui)
 
@@ -119,4 +118,4 @@
 
 ## Licence
 
-``Apache 2.0``
+``MIT``

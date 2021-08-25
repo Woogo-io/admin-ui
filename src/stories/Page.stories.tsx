@@ -17,7 +17,7 @@ import {
   Button,
 } from '../index';
 import {
-  Modal, ModalBody, ModalConfirmation, ModalContainer, ModalFooter, ModalHeader,
+  Modal, ModalBody, ModalFooter, ModalHeader,
 } from '../components/modal';
 
 export default {
@@ -39,7 +39,18 @@ const Global = () => {
     <>
       <Header title="Woogo UI" haveNotification />
       <MainContainer>
-
+        <Modal size="regular" isOpen={isModalOpen}>
+          <ModalHeader onClose={() => setIsModalOpen(false)}>
+            Header Title
+          </ModalHeader>
+          <ModalBody>
+            <span>Coucou</span>
+            <span>Salut</span>
+          </ModalBody>
+          <ModalFooter>
+            <Button styleType="primary" onClick={() => setIsModalOpen(false)}>Close</Button>
+          </ModalFooter>
+        </Modal>
         <PageTitle>Dashboard</PageTitle>
         <SectionTitle>Summary</SectionTitle>
 
@@ -67,32 +78,8 @@ const Global = () => {
           <Badge type="warning">Warning</Badge>
         </div>
 
-        <div className="mt-5 flex space-x-2">
-          <ModalContainer isOpen={isModalOpen}>
-            <Button styleType="primary" onClick={() => setIsModalOpen(true)}>Open modal</Button>
-            <Modal size="regular">
-              <ModalHeader closeFn={() => setIsModalOpen(false)}>
-                Header Title
-              </ModalHeader>
-              <ModalBody>
-                <span>Coucou</span>
-                <span>Salut</span>
-              </ModalBody>
-              <ModalFooter>
-                <Button styleType="primary" onClick={() => setIsModalOpen(false)}>Close</Button>
-              </ModalFooter>
-            </Modal>
-          </ModalContainer>
-          <ModalConfirmation
-            size="regular"
-            title="Do you want to delete this ?"
-            text="Write delete"
-            valideCb={() => console.log('coucou')}
-            valideString="delete"
-            buttonText="Delete"
-          >
-            <Button styleType="primary">Confirmation Modal</Button>
-          </ModalConfirmation>
+        <div className="mt-5 flex">
+          <Button styleType="primary" onClick={() => setIsModalOpen(true)}>Open modal</Button>
         </div>
 
         <div className="flex mt-5">
