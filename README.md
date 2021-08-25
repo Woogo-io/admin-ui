@@ -7,11 +7,18 @@
  - React / Next
  - Formik
 
+## Dark Mode
+
+You can activate Dark mode in your ``tailwind.config.js``
+
+This package is ready for it
+
+
 ## Sample
 
 ### Next.js
 ```tsx
-<ThemeProvider>
+<ThemeProvider defineBodyColor>
   <SidebarProvider>
 
     <Sidebar>
@@ -56,7 +63,7 @@
 
 ### React
 ```tsx
-<ThemeProvider>
+<ThemeProvider defineBodyColor>
   <SidebarProvider>
     <Router>
 
@@ -100,6 +107,23 @@
 </ThemeProvider>
 ```
 
+## Background Color
+
+You can choose to set with javascript the class to body with props ``defineBodyColor`` on ThemeProvider component
+
+Or you can add this to your css file
+```sass
+body {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+```
+
+## For a nice scroll bar on Chrome
+
+Check stories/tailwind.css
+
+Add ``::webkit*`` class in your css file 
+
 ## List Components
 - Badges
 - Buttons
@@ -111,6 +135,7 @@
 - Tables
 - Titles
 - Icons
+- Modal
 
 ## Author
 - Justin Wauquier

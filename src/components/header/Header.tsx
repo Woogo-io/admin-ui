@@ -31,7 +31,7 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
   };
 
   return (
-    <header className="relative z-20 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16 border-b border-purple-600">
+    <header className="sticky z-10 top-0 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16 border-b border-purple-600">
       <div className="flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300 w-full">
         <div className="flex items-center">
           <button

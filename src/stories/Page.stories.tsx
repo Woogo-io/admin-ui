@@ -4,7 +4,7 @@ import './tailwind.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as Yup from 'yup';
 import {
-  Form, Formik, FormikHelpers,
+  Form, Formik,
 } from 'formik';
 import {
   NextLinkMenu, ReactLinkMenu,
@@ -24,22 +24,13 @@ export default {
   title: 'Sample/DefaultPage',
 };
 
-interface FormikValues {
-  firstName: string;
-  lastName: string;
-  agreeWithTerms: boolean;
-  gender: 'man' | 'woman';
-  country: string;
-  message: string;
-}
-
 const Global = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       <Header title="Woogo UI" haveNotification />
       <MainContainer>
-        <Modal size="regular" isOpen={isModalOpen}>
+        <Modal size="regular" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalHeader onClose={() => setIsModalOpen(false)}>
             Header Title
           </ModalHeader>
@@ -134,9 +125,7 @@ const Global = () => {
 
             })
           }
-            onSubmit={(value: FormikValues, { setSubmitting }: FormikHelpers<FormikValues>) => {
-              console.log(value);
-            }}
+            onSubmit={() => {}}
           >
             {({ errors, touched }) => (
               <Form className="flex flex-col space-y-4 w-1/2 p-2">
@@ -202,7 +191,7 @@ const Global = () => {
 };
 
 export const DefaultReact = () => (
-  <ThemeProvider>
+  <ThemeProvider defineBodyColor>
     <SidebarProvider>
       <Router>
 
@@ -217,7 +206,7 @@ export const DefaultReact = () => (
 );
 
 export const DefaultNext = () => (
-  <ThemeProvider>
+  <ThemeProvider defineBodyColor>
     <SidebarProvider>
 
       <Sidebar>

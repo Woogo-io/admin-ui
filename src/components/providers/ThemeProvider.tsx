@@ -9,9 +9,14 @@ import React, {
 
 import ThemeContext from '../contexts/ThemeContext';
 
-export const ThemeProvider: FC<PropsWithChildren<{}>> = ({
+interface ThemeProviderProps {
+  defineBodyColor?: boolean;
+}
+
+export const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({
   children,
-}: PropsWithChildren<{}>) => {
+  defineBodyColor,
+}: PropsWithChildren<ThemeProviderProps>) => {
   let userPreference: string | boolean = 'dark';
   if (typeof window !== 'undefined') {
     userPreference = !!window.matchMedia
@@ -27,6 +32,7 @@ export const ThemeProvider: FC<PropsWithChildren<{}>> = ({
   }
   const currentPreference = prefLocalStorage || (userPreference ? 'dark' : 'light');
   const [theme, setTheme] = useState(currentPreference);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const oldTheme = theme === 'light' ? 'dark' : 'light';
 
@@ -44,11 +50,24 @@ export const ThemeProvider: FC<PropsWithChildren<{}>> = ({
     else setTheme('light');
   };
 
+  useEffect(() => {
+    if (defineBodyColor) document.body.classList.add('bg-gray-50', 'dark:bg-gray-900');
+  }, []);
+
+  useEffect(() => {
+    if (modalOpen) {
+      const x = window.scrollX;
+      const y = window.scrollY;
+      window.onscroll = () => { window.scrollTo(x, y); };
+    } else window.onscroll = () => {};
+  }, [modalOpen]);
+
   return (
     <ThemeContext.Provider
       value={{
         theme,
         toggleTheme,
+        setModalOpen,
       }}
     >
       {children}

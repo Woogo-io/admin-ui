@@ -15,7 +15,7 @@ export default {
 };
 
 export const React404 = () => (
-  <ThemeProvider>
+  <ThemeProvider defineBodyColor>
     <SidebarProvider>
       <Router>
 
@@ -35,7 +35,7 @@ export const React404 = () => (
 );
 
 export const Next404 = () => (
-  <ThemeProvider>
+  <ThemeProvider defineBodyColor>
     <SidebarProvider>
 
       <Sidebar>
