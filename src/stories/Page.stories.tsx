@@ -219,7 +219,7 @@ export const DefaultNext = () => (
     <SidebarProvider>
 
       <Sidebar>
-        <NextLinkMenu to="/" icon="BellIcon" name="Test" isActive />
+        <NextLinkMenu to="/" icon="BellIcon" name="Test" />
         <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
       </Sidebar>
 

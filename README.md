@@ -22,8 +22,7 @@ This package is ready for it
   <SidebarProvider>
 
     <Sidebar>
-      <NextLinkMenu to="/" icon="BellIcon" name="Test" isActive />
-      <NextLinkMenu to="/home" icon="MenuIcon" name="Home" />
+      <NextLinkMenu to="/" icon="BellIcon" name="Test" />
     </Sidebar>
 
     <Header title="Woogo UI" haveNotification/>
