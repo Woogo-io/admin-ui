@@ -12,4 +12,5 @@ export * from './components/titles';
 export * from './components/container';
 export * from './components/link';
 export * from './components/modal';
+export * from './components/loader';
 export * from './theme/icons';

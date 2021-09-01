@@ -142,6 +142,10 @@ Add ``::webkit*`` class in your css file
 :---:|:---:|
 [moutehard](https://github.com/moutehard)|[GautheyValentin](https://github.com/GautheyValentin)|
 
+## Content Providers
+
+- SVG Loader Original : Sam Herbert (@sherb) | [More Info](http://goo.gl/7AJzbL)
+
 ## Licence
 
 ``MIT``

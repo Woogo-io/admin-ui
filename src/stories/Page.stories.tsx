@@ -19,6 +19,7 @@ import {
 import {
   Modal, ModalBody, ModalFooter, ModalHeader,
 } from '../components/modal';
+import { PulseLoader, RoundLoader } from '../components/loader';
 
 export default {
   title: 'Sample/DefaultPage',
@@ -67,6 +68,11 @@ const Global = () => {
           <Badge type="danger">Danger</Badge>
           <Badge type="success">Success</Badge>
           <Badge type="warning">Warning</Badge>
+        </div>
+
+        <div className="mt-5 flex space-x-5">
+          <RoundLoader />
+          <PulseLoader />
         </div>
 
         <div className="mt-5 flex">
