@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import clsx from 'clsx';
 import React, {
-  FC, MouseEvent, PropsWithChildren, useEffect,
+  FC, PropsWithChildren, useEffect, useRef,
 } from 'react';
 
 import theme from '../../theme/default';
@@ -23,18 +23,18 @@ const Modal: FC<PropsWithChildren<ModalProps>> = (
 
   const { setModalOpen } = useTheme();
 
-  const handleClickOverlay = (event: MouseEvent<HTMLDivElement>) => {
-    const { target } = event;
-    try {
-      // @ts-ignore
-      if (target.dataset.modal) {
-        onClose();
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error('An error was occured with modal component');
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) onClose();
     }
-  };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
+
   useEffect(() => {
     if (isOpen) setModalOpen(true);
     else setModalOpen(false);
@@ -45,8 +45,11 @@ const Modal: FC<PropsWithChildren<ModalProps>> = (
   if (isOpen) {
     return (
       <>
-        <div data-modal className={theme.modal.base} onClick={handleClickOverlay}>
-          <div className={clsx(theme.modal.sizer, size === 'small' && 'max-w-sm', size === 'regular' && 'max-w-3xl', size === 'large' && 'max-w-6xl')}>
+        <div data-modal className={theme.modal.base}>
+          <div
+            ref={ref}
+            className={clsx(theme.modal.sizer, size === 'small' && 'max-w-sm', size === 'regular' && 'max-w-3xl', size === 'large' && 'max-w-6xl')}
+          >
             <div className={theme.modal.content}>
               {children}
             </div>

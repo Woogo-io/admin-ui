@@ -1,8 +1,6 @@
-import React, { FC, MouseEvent } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
 import {
-  AccountIcon,
-  BellIcon,
   MenuIcon,
   MoonIcon,
   SearchIcon,
@@ -13,15 +11,12 @@ import { useSidebar, useTheme } from '../providers';
 
 interface HeaderProps {
   title: string;
-  handleNotify?: (e: MouseEvent<HTMLButtonElement>) => void;
-  handleAccount?: (e: MouseEvent<HTMLButtonElement>) => void;
-  haveNotification?: boolean;
   SearchComponent?: () => JSX.Element;
 }
 
-const Header: FC<HeaderProps> = (props: HeaderProps) => {
+const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
   const {
-    title, handleNotify, handleAccount, SearchComponent, haveNotification,
+    title, SearchComponent, children,
   } = props;
   const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
   const { theme, toggleTheme } = useTheme();
@@ -75,38 +70,7 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
               )}
             </button>
           </li>
-          {handleNotify && (
-            <li className="relative">
-              <button
-                className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
-                onClick={handleNotify}
-                aria-label="Notifications"
-                aria-haspopup="true"
-                type="button"
-              >
-                <BellIcon className="w-5 h-5" aria-hidden="true" />
-                {haveNotification && (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"
-                />
-                )}
-              </button>
-            </li>
-          )}
-          {handleAccount && (
-            <li className="relative">
-              <button
-                className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
-                onClick={handleAccount}
-                aria-label="Account"
-                aria-haspopup="true"
-                type="button"
-              >
-                <AccountIcon className="w-5 h-5" />
-              </button>
-            </li>
-          )}
+          {children}
         </ul>
       </div>
     </header>

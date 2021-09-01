@@ -18,6 +18,7 @@ import {
 
   Modal, ModalBody, ModalFooter, ModalHeader,
   PulseLoader, RoundLoader, SidebarCategory,
+  HeaderAccount, HeaderNotify,
 } from '../index';
 
 export default {
@@ -28,7 +29,14 @@ const Global = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <Header title="Woogo UI" haveNotification />
+      <Header title="Woogo UI">
+        <HeaderNotify haveNotification>
+          <span>View All</span>
+        </HeaderNotify>
+        <HeaderAccount>
+          <span>Logout</span>
+        </HeaderAccount>
+      </Header>
       <MainContainer>
         <Modal size="regular" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalHeader onClose={() => setIsModalOpen(false)}>
