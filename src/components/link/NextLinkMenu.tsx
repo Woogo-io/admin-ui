@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -14,7 +14,12 @@ const NextLinkMenu = ({
   to, icon, name,
 }: NextLinkMenuProps) => {
   const { asPath } = useRouter();
-  const isActive = to === asPath;
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    if (to === asPath) setIsActive(true);
+    else setIsActive(false);
+  }, [asPath]);
 
   return (
     <li className="relative px-6 py-3">
