@@ -18,7 +18,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
   const {
     title, SearchComponent, children,
   } = props;
-  const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
+  const { isSidebarOpen, setIsSidebarOpen, buttonRef } = useSidebar();
   const { theme, toggleTheme } = useTheme();
 
   const handleThemeClick = () => {
@@ -34,6 +34,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             aria-label="Menu"
             type="button"
+            ref={buttonRef}
           >
             <MenuIcon className="w-6 h-6" aria-hidden="true" />
           </button>

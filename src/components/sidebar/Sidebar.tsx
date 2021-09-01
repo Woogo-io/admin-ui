@@ -7,19 +7,22 @@ import { useSidebar } from '../providers';
 import SidebarContent from './SidebarContent';
 
 const Sidebar: FC<PropsWithChildren<{}>> = (props: PropsWithChildren<{}>) => {
-  const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
+  const { isSidebarOpen, setIsSidebarOpen, buttonRef } = useSidebar();
 
   const ref = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) setIsSidebarOpen(false);
+      if (ref.current
+        && buttonRef.current
+        && !ref.current.contains(event.target)
+        && !buttonRef.current.contains(event.target)) setIsSidebarOpen(false);
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, buttonRef]);
 
   return (
     <aside
