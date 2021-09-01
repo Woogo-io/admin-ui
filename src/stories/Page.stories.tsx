@@ -15,11 +15,10 @@ import {
   Table, TableBody, TableCell, TableContainer, TableFooter, TableHeader, TablePagination, TableRow,
   Badge,
   Button,
-} from '../index';
-import {
+
   Modal, ModalBody, ModalFooter, ModalHeader,
-} from '../components/modal';
-import { PulseLoader, RoundLoader } from '../components/loader';
+  PulseLoader, RoundLoader, SidebarCategory,
+} from '../index';
 
 export default {
   title: 'Sample/DefaultPage',
@@ -203,6 +202,10 @@ export const DefaultReact = () => (
 
         <Sidebar>
           <ReactLinkMenu to="/" icon="BellIcon" name="Test" />
+          <ReactLinkMenu to="/" icon="HomeIcon" name="Test" />
+          <SidebarCategory name="Content" />
+          <ReactLinkMenu to="/" icon="LanguageIcon" name="Test" />
+          <ReactLinkMenu to="/" icon="PageIcon" name="Test" />
         </Sidebar>
 
         <Global />
