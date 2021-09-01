@@ -14,7 +14,10 @@ const NextLinkMenu = ({
   to, icon, name,
 }: NextLinkMenuProps) => {
   const { asPath } = useRouter();
-  const isActive = to === asPath;
+  let isActive = false;
+
+  if (to === '/' && asPath === '') isActive = true;
+  if (to === asPath) isActive = true;
 
   return (
     <li className="relative px-6 py-3">
