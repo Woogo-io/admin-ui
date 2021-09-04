@@ -12,13 +12,13 @@ import {
   InfoCard, MainContainer, PageTitle, SectionTitle, Sidebar, SidebarProvider, ThemeProvider,
   FormikField, FormLabel, FormGroup,
 
-  Table, TableBody, TableCell, TableContainer, TableFooter, TableHeader, TablePagination, TableRow,
+  Table,
   Badge,
   Button,
 
   Modal, ModalBody, ModalFooter, ModalHeader,
   PulseLoader, RoundLoader, SidebarCategory,
-  HeaderAccount, HeaderNotify,
+  HeaderAccount, HeaderNotify, TableRow, TableCell,
 } from '../index';
 
 export default {
@@ -60,6 +60,10 @@ const Global = () => {
         </div>
 
         <div className="space-x-5 mt-5">
+          <Button styleType="primary" icon="EditIcon">
+            Update
+          </Button>
+          <Button styleType="primary" icon="DeleteIcon" />
           <Button styleType="primary">Primary</Button>
           <Button styleType="primary" size="small">Small</Button>
           <Button styleType="outline">Outline</Button>
@@ -88,39 +92,37 @@ const Global = () => {
 
         <div className="flex mt-5">
           <div className="w-1/2 p-2">
-            <TableContainer>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableCell>Ref Command</TableCell>
-                    <TableCell>TVA</TableCell>
-                    <TableCell>Items</TableCell>
-                    <TableCell>Quantity</TableCell>
-                    <TableCell>Price</TableCell>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>#45125</TableCell>
-                    <TableCell>FR225412354</TableCell>
-                    <TableCell>- Dongle USB</TableCell>
-                    <TableCell>1</TableCell>
-                    <TableCell>23€</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>#45125</TableCell>
-                    <TableCell>FR225412354</TableCell>
-                    <TableCell>- Dongle USB</TableCell>
-                    <TableCell>1</TableCell>
-                    <TableCell>23€</TableCell>
-                  </TableRow>
-                </TableBody>
-
-              </Table>
-              <TableFooter>
-                <TablePagination totalResults={50} resultsPerPage={10} currentPage={0} setCurrentPage={() => {}} />
-              </TableFooter>
-            </TableContainer>
+            <Table
+              headers={['Ref Command', 'TVA', 'Name', 'Quantity', 'Price', '']}
+              data={[
+                {
+                  id: '#45125', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                },
+                {
+                  id: '#45124', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                },
+                {
+                  id: '#45123', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                },
+              ]}
+              paginationActive
+              resultsPerPage={2}
+            >
+              {({
+                id, tva, name, quantity, price,
+              }) => (
+                <TableRow key={id}>
+                  <TableCell>{id}</TableCell>
+                  <TableCell>{tva}</TableCell>
+                  <TableCell>{name}</TableCell>
+                  <TableCell>{quantity}</TableCell>
+                  <TableCell>{price}</TableCell>
+                  <TableCell>
+                    <Button styleType="primary" icon="DeleteIcon" size="small" />
+                  </TableCell>
+                </TableRow>
+              )}
+            </Table>
           </div>
           <Formik
             initialValues={{

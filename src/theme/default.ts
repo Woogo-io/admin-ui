@@ -105,7 +105,7 @@ export default {
     base: 'flex items-start justify-between p-5 border-b border-solid border-purple-600 rounded-t bg-gray-50 dark:bg-gray-800',
     title: 'text-xl font-semibold text-black dark:text-white',
     closeButton: 'p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none',
-    closeCross: 'bg-transparent text-black dark:text-white opacity-5 h-6 w-6 block outline-none focus:outline-none'
+    closeCross: 'bg-transparent text-black dark:text-white opacity-5 h-6 w-6 block outline-none focus:outline-none',
   },
   // ModalBody
   modalBody: {

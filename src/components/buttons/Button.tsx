@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
+import { Icon, IconType } from '../../theme/icons';
 
 export type ButtonProps = {
   disabled?: boolean;
@@ -11,6 +12,7 @@ export type ButtonProps = {
   size?: 'larger' | 'large' | 'regular' | 'small' | 'normal';
   styleType?: 'primary' | 'outline' | 'link'
   className?: string;
+  icon?: IconType;
 };
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({
@@ -22,6 +24,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   size,
   styleType,
   className,
+  icon,
 }: PropsWithChildren<ButtonProps>) => (
   <button
     id={id}
@@ -36,7 +39,17 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     )}
     disabled={disabled}
   >
-    {children}
+    {icon ? (
+      <>
+        {children ? (
+          <div className="flex items-center space-x-2">
+            <Icon icon={icon} ariaHidden={icon} className={theme.button.icon[size]} />
+            <span>{children}</span>
+          </div>
+        ) : <Icon icon={icon} ariaHidden={icon} className={theme.button.icon[size]} /> }
+      </>
+    ) : children }
+
   </button>
 );
 

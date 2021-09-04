@@ -120,6 +120,51 @@ export const LanguageIcon: FC<SvgProps> = ({ className }: SvgProps) => (
   </svg>
 );
 
+export const EditIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg
+    viewBox="0 0 490.6 490.6"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M28.1,89.564h203.8c-8.7,8.7-17.3,17.4-26,26.1l-30,30.1H56.1v288.4h288.4v-119.9c18.7-18.7,37.4-37.4,56.1-56.1v204
+        c0,15.5-12.6,28.1-28.1,28.1H28.1c-15.5,0-28.1-12.6-28.1-28.1v-344.6C0,102.064,12.6,89.564,28.1,89.564z M484.9,72.464
+        c3,6.8,3.8,14.5,5.7,21.8c-0.5,5.8-2.5,10.3-6.6,14.3c-82.8,82.7-165.6,165.4-248.3,248.3c-3.2,3.2-6.7,5-11,5.9
+        c-35.7,7.5-71.4,15-107.1,22.6c-8.4,1.8-14.7-4.5-12.9-12.9c7.6-36,15.1-72,23-107.9c0.8-3.5,2.9-7.2,5.4-9.8
+        c23.7-24,47.6-47.8,71.4-71.6c58.9-58.9,117.8-117.8,176.6-176.8c4.3-4.4,9.1-6.6,14.9-5.9c6.6,0.8,13.5,1.5,19.6,4
+        C447.9,17.564,470.9,40.664,484.9,72.464z M212.6,340.264c-1.6-5.3-2.5-11-5.1-15.8c-10.1-18.7-24.6-33.1-43.7-42.6
+        c-5.4-2.7-11.1-4.4-17.7-3.8c-3.2,15.1-6.5,29.8-9.4,44.6v0.1c15.7,2.7,28.2,14.9,31.3,30.5c13.9-2.8,27.7-5.9,41.6-8.7
+        C212.3,344.064,213.3,342.764,212.6,340.264z"
+    />
+  </svg>
+);
+
+export const DeleteIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg viewBox="0 0 512 512" className={className} fill="currentColor">
+    <path d="m424 64h-88v-16c0-26.51-21.49-48-48-48h-64c-26.51 0-48 21.49-48 48v16h-88c-22.091 0-40 17.909-40 40v32c0 8.837 7.163 16 16 16h384c8.837 0 16-7.163 16-16v-32c0-22.091-17.909-40-40-40zm-216-16c0-8.82 7.18-16 16-16h64c8.82 0 16 7.18 16 16v16h-96z" />
+    <path d="m78.364 184c-2.855 0-5.13 2.386-4.994 5.238l13.2 277.042c1.22 25.64 22.28 45.72 47.94 45.72h242.98c25.66 0 46.72-20.08 47.94-45.72l13.2-277.042c.136-2.852-2.139-5.238-4.994-5.238zm241.636 40c0-8.84 7.16-16 16-16s16 7.16 16 16v208c0 8.84-7.16 16-16 16s-16-7.16-16-16zm-80 0c0-8.84 7.16-16 16-16s16 7.16 16 16v208c0 8.84-7.16 16-16 16s-16-7.16-16-16zm-80 0c0-8.84 7.16-16 16-16s16 7.16 16 16v208c0 8.84-7.16 16-16 16s-16-7.16-16-16z" />
+  </svg>
+);
+
+export const ArrowLeft: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg className={className} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+    <path
+      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+      clipRule="evenodd"
+      fillRule="evenodd"
+    />
+  </svg>
+);
+
+export const ArrowRight: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg className={className} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+    <path
+      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+      clipRule="evenodd"
+      fillRule="evenodd"
+    />
+  </svg>
+);
+
 const Icons = {
   BellIcon,
   MenuIcon,
@@ -130,6 +175,10 @@ const Icons = {
   HomeIcon,
   PageIcon,
   LanguageIcon,
+  EditIcon,
+  DeleteIcon,
+  ArrowLeft,
+  ArrowRight,
 };
 
 export type IconType = 'BellIcon'
@@ -140,7 +189,11 @@ export type IconType = 'BellIcon'
 | 'ForbiddenIcon'
 | 'HomeIcon'
 | 'PageIcon'
-| 'LanguageIcon';
+| 'LanguageIcon'
+| 'EditIcon'
+| 'DeleteIcon'
+| 'ArrowLeft'
+| 'ArrowRight';
 
 type IconProps = {
   icon: IconType;
