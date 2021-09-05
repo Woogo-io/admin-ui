@@ -15,6 +15,7 @@ const ModalHeader: FC<PropsWithChildren<ModalHeaderProps>> = (
     <div className={theme.modalHeader.base}>
       <h3 className={theme.modalHeader.title}>{children}</h3>
       <button
+        type="button"
         className={theme.modalHeader.closeButton}
         onClick={onClose}
       >
