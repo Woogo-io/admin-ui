@@ -8,7 +8,7 @@ export type FormLabelProps = {
   className?: string;
   htmlFor?: string;
   type?: FieldType;
-  errors?: string;
+  errors?: string | false;
 };
 
 const FormLabel: FC<PropsWithChildren<FormLabelProps>> = ({
