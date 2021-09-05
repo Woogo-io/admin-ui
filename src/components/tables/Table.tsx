@@ -49,7 +49,9 @@ export function Table<T>({
             {state.data.length
               ? state.data.map((value) => children(value))
               : (
-                <td colSpan={headers.length} className="w-full text-center p-3 text-sm">No result to display.</td>
+                <TableRow>
+                  <td colSpan={headers.length} className="w-full text-center p-3 text-sm">No result to display.</td>
+                </TableRow>
               )}
           </tbody>
         </table>

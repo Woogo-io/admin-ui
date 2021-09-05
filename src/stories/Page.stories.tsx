@@ -95,15 +95,15 @@ const Global = () => {
             <Table
               headers={['Ref Command', 'TVA', 'Name', 'Quantity', 'Price', '']}
               data={[
-                {
-                  id: '#45125', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
-                },
-                {
-                  id: '#45124', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
-                },
-                {
-                  id: '#45123', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
-                },
+                // {
+                //   id: '#45125', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                // },
+                // {
+                //   id: '#45124', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                // },
+                // {
+                //   id: '#45123', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
+                // },
               ]}
               paginationActive
               resultsPerPage={2}
