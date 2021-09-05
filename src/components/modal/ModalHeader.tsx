@@ -1,6 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react';
 
 import theme from '../../theme/default';
+import { CloseIcon } from '../../theme/icons';
 
 export type ModalHeaderProps = {
   onClose: () => void;
@@ -17,9 +18,7 @@ const ModalHeader: FC<PropsWithChildren<ModalHeaderProps>> = (
         className={theme.modalHeader.closeButton}
         onClick={onClose}
       >
-        <span className={theme.modalHeader.closeCross}>
-          ×
-        </span>
+        <CloseIcon className={theme.modalHeader.closeCross} />
       </button>
     </div>
   );
