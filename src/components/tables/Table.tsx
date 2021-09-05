@@ -46,10 +46,14 @@ export function Table<T>({
             </TableRow>
           </thead>
           <tbody className={theme.tableBody.base}>
-            {state.data.map((value) => children(value))}
+            {state.data.length
+              ? state.data.map((value) => children(value))
+              : (
+                <td colSpan={headers.length} className="w-full text-center p-3 text-sm">No result to display.</td>
+              )}
           </tbody>
         </table>
-        {paginationActive && (
+        {paginationActive && data.length > resultsPerPage && (
         <div className={theme.tableFooter.base}>
           <div className={theme.pagination.base}>
             <span className="flex items-center font-semibold tracking-wide uppercase">
