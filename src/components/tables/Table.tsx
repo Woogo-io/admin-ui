@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, {
   ReactNode, useEffect, useReducer,
 } from 'react';
@@ -41,7 +42,7 @@ export function Table<T>({
         <table className="w-full whitespace-no-wrap table-auto">
           <thead className={theme.tableHeader.base}>
             <TableRow>
-              {headers.map((header) => <TableCell>{header}</TableCell>) }
+              {headers.map((header, index) => <TableCell key={index}>{header}</TableCell>) }
             </TableRow>
           </thead>
           <tbody className={theme.tableBody.base}>
