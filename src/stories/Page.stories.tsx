@@ -15,7 +15,7 @@ import {
   Table,
   Badge,
   Button,
-
+  Text,
   Modal, ModalBody, ModalFooter, ModalHeader,
   PulseLoader, RoundLoader, SidebarCategory,
   HeaderAccount, HeaderNotify, TableRow, TableCell,
@@ -82,12 +82,16 @@ const Global = () => {
         </div>
 
         <div className="mt-5 flex space-x-5">
-          <RoundLoader />
-          <PulseLoader />
+          <RoundLoader className="text-gray-700 dark:text-white" />
+          <PulseLoader className="text-gray-700 dark:text-white" />
         </div>
 
         <div className="mt-5 flex">
           <Button styleType="primary" onClick={() => setIsModalOpen(true)}>Open modal</Button>
+        </div>
+
+        <div className="mt-5">
+          <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente facilis inventore autem a quis. Sunt repudiandae esse aspernatur atque, magnam facere quidem. Cumque fuga dicta nesciunt labore nostrum cum molestias!</Text>
         </div>
 
         <div className="flex mt-5">

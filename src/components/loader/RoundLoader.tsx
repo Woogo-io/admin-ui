@@ -5,14 +5,14 @@ import React from 'react';
 export interface RoundLoaderProps {
   width?: string;
   height?: string;
-  stroke?: string;
+  className?: string;
 }
 
 const RoundLoader = (props: RoundLoaderProps) => {
-  const { width, height, stroke } = props;
+  const { width, height, className } = props;
 
   return (
-    <svg width={width} height={height} viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke={stroke}>
+    <svg width={width} height={height} viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" className={className}>
       <g fill="none" fillRule="evenodd">
         <g transform="translate(1 1)" strokeWidth="2">
           <circle strokeOpacity=".5" cx="18" cy="18" r="18" />

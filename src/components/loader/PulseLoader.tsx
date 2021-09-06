@@ -5,14 +5,14 @@ import React from 'react';
 export interface PulseLoaderProps {
   width?: string;
   height?: string;
-  stroke?: string;
+  className?: string;
 }
 
 const PulseLoader = (props: PulseLoaderProps) => {
-  const { width, height, stroke } = props;
+  const { width, height, className } = props;
 
   return (
-    <svg width={width} height={height} viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke={stroke}>
+    <svg width={width} height={height} viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" className={className}>
       <g fill="none" fillRule="evenodd" strokeWidth="2">
         <circle cx="22" cy="22" r="1">
           <animate

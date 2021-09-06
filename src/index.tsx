@@ -14,3 +14,4 @@ export * from './components/link';
 export * from './components/modal';
 export * from './components/loader';
 export * from './theme/icons';
+export * from './components/text';

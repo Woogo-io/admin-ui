@@ -104,6 +104,7 @@ Add ``::webkit*`` class in your css file
 - Icons
 - Modal
 - Loader
+- Text
 
 ## Contributors
 [<img alt="moutehard" src="https://avatars.githubusercontent.com/u/862238?v=4&s=117 width=117">](https://github.com/moutehard) |[<img alt="GautheyValentin" src="https://avatars.githubusercontent.com/u/18257114?v=4&s=117 width=117">](https://github.com/GautheyValentin) |
