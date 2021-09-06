@@ -1,9 +1,17 @@
-import React, { FC, PropsWithChildren } from 'react';
-
+import clsx from 'clsx';
+import React, { MouseEvent, ReactNode } from 'react';
 import theme from '../../theme/default';
 
-const TableRow: FC<PropsWithChildren<unknown>> = ({
+export interface TableRowProps {
+  children?: ReactNode
+  className?: string;
+  onClick?: (e: MouseEvent<HTMLTableRowElement>) => void | Promise<void>;
+}
+
+const TableRow = ({
   children,
-}: PropsWithChildren<unknown>) => <tr className={theme.tableRow.base}>{children}</tr>;
+  className,
+  onClick,
+}: TableRowProps) => <tr className={clsx(theme.tableRow.base, className)} onClick={onClick}>{children}</tr>;
 
 export default TableRow;

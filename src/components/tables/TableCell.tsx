@@ -1,9 +1,19 @@
-import React, { FC, PropsWithChildren } from 'react';
-
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import clsx from 'clsx';
+import React, { MouseEvent, ReactNode } from 'react';
 import theme from '../../theme/default';
 
-const TableCell: FC<PropsWithChildren<unknown>> = ({
+export interface TableCellProps {
+  children?: ReactNode;
+  className?: string;
+  onClick?: (e: MouseEvent<HTMLTableCellElement>) => void | Promise<void>
+}
+
+const TableCell = ({
   children,
-}: PropsWithChildren<unknown>) => <td className={theme.tableCell.base}>{children}</td>;
+  className,
+  onClick,
+}: TableCellProps) => <td className={clsx(theme.tableCell.base, className)} onClick={onClick}>{children}</td>;
 
 export default TableCell;
