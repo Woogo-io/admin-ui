@@ -65,6 +65,8 @@ export default {
   },
   cursorNotAllowed: 'cursor-not-allowed',
   disabledCursorNotAllowed: 'disabled:cursor-not-allowed',
+  justifyBetween: 'justify-between',
+  justifyEnd: 'justify-end',
   hidden: 'hidden',
   // Titles
   pageTitle: {
@@ -120,6 +122,9 @@ export default {
       'dark:text-purple-400',
       'disabled:opacity-50',
     ],
+  },
+  table: {
+    container: 'mb-2 flex items-center',
   },
   // TableFooter
   tableFooter: {

@@ -99,6 +99,12 @@ const Global = () => {
             <Table
               headers={['Ref Command', 'TVA', 'Name', 'Quantity', 'Price', '']}
               searchKey={['tva', 'name', 'id']}
+              title={(
+                <Text className="font-medium flex items-center">
+                  Title Table
+                  <Button className="ml-5" size="small">Add</Button>
+                </Text>
+              )}
               data={[
                 {
                   id: '#45125', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',

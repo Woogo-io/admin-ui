@@ -17,6 +17,7 @@ export interface TableProps<T> {
   resultsPerPage?: number;
   children: (data: T) => ReactNode;
   searchKey?: string[]
+  title?: JSX.Element
 }
 
 function Table<T>({
@@ -26,6 +27,7 @@ function Table<T>({
   paginationActive,
   resultsPerPage,
   searchKey,
+  title,
 }: TableProps<T>) {
   const [state, dispatch] = useReducer((pState, payload) => ({ ...pState, ...payload }), {
     page: 0, data: [], search: '', searchResult: [],
@@ -63,8 +65,10 @@ function Table<T>({
 
   return (
     <>
-      {!!searchKey?.length && (
-        <div className="mb-2 flex justify-end">
+      {(!!searchKey?.length || title) && (
+        <div className={clsx(theme.table.container, title && !!searchKey?.length ? theme.justifyBetween : !!searchKey?.length && theme.justifyEnd)}>
+          {title}
+          {!!searchKey?.length && (
           <div>
             <input
               type="text"
@@ -74,6 +78,7 @@ function Table<T>({
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch({ search: e.target.value })}
             />
           </div>
+          )}
         </div>
       )}
       <div className={theme.tableContainer.base}>
