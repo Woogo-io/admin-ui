@@ -5,7 +5,7 @@ import theme from '../../theme/default';
 export interface TableRowProps {
   children?: ReactNode
   className?: string;
-  onClick?: (e: MouseEvent<HTMLTableRowElement>) => void | Promise<void>;
+  onClick?: (e: MouseEvent<HTMLTableRowElement>) => any | Promise<any>;
 }
 
 const TableRow = ({

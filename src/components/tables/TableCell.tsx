@@ -7,7 +7,7 @@ import theme from '../../theme/default';
 export interface TableCellProps {
   children?: ReactNode;
   className?: string;
-  onClick?: (e: MouseEvent<HTMLTableCellElement>) => void | Promise<void>
+  onClick?: (e: MouseEvent<HTMLTableCellElement>) => any | Promise<any>
 }
 
 const TableCell = ({
