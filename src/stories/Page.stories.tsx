@@ -98,6 +98,7 @@ const Global = () => {
           <div className="w-1/2 p-2">
             <Table
               headers={['Ref Command', 'TVA', 'Name', 'Quantity', 'Price', '']}
+              searchKey={['tva', 'name', 'id']}
               data={[
                 {
                   id: '#45125', tva: 'FR225412354', name: 'Dongle USB', quantity: 1, price: '23€',
