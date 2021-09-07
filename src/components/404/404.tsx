@@ -2,27 +2,28 @@ import React, { FC, MouseEvent } from 'react';
 
 import { ForbiddenIcon } from '../../theme/icons/index';
 import { Button } from '../buttons';
+import theme from '../../theme/default';
 
 export interface NotFoundProps {
   handleBack?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const NotFoundContainer: FC<NotFoundProps> = ({ handleBack }: NotFoundProps) => (
-  <div className="flex flex-col items-center">
+  <div className={theme.notFound.container}>
 
-    <h1 className="text-6xl font-semibold text-gray-700 dark:text-gray-200 flex space-x-5 items-center mt-10">
+    <h1 className={theme.notFound.title}>
       <ForbiddenIcon
-        className="w-16 h-16 text-purple-200"
+        className={theme.notFound.icon}
         aria-hidden="true"
       />
-      <span className="-mt-2">404</span>
+      <span className={theme.notFound.statusCode}>404</span>
     </h1>
-    <p className="text-gray-700 dark:text-gray-300 mt-5">
+    <p className={theme.notFound.text}>
       Page not found. Check the address or
       <Button
         styleType="link"
         size="normal"
-        className="ml-1"
+        className={theme.notFound.button}
         onClick={handleBack}
       >
         go back

@@ -74,6 +74,33 @@ For more exemple look stories in dir : ``src/stories``
 <NextLinkMenu to="/" icon="BellIcon" name="Test" />
 ```
 
+## Production Build
+
+To prevent purge of class in the package your need to add next line to your ``tailwind.config.js``
+
+```js
+module.exports = {
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.{js,ts,jsx,tsx}', './node_modules/@woogo/admin-ui/src/theme/default.ts'],
+    safelist: ['dark']
+  },
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+}
+```
+
+If you use dark theme you must put this in safelist like above
+
 ## Background Color
 
 You can choose to set with javascript the class to body with props ``defineBodyColor`` on ThemeProvider component

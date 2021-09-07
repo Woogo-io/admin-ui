@@ -2,6 +2,7 @@ import React, { FC, PropsWithChildren } from 'react';
 
 import Card from './Card';
 import CardBody from './CardBody';
+import theme from '../../theme/default';
 
 export type InfoCardProps = {
   title: string;
@@ -14,10 +15,10 @@ const InfoCard: FC<PropsWithChildren<InfoCardProps>> = ({
   <Card>
     <CardBody className="flex items-center">
       <div>
-        <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+        <p className={theme.infoCard.title}>
           {title}
         </p>
-        <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">
+        <p className={theme.infoCard.children}>
           {children}
         </p>
       </div>

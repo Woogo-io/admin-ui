@@ -52,7 +52,7 @@ const FormikField: FC<FormikFieldProps> = ({
       className={clsx(
         selectedTheme,
         className,
-        disabled && 'disabled:cursor-not-allowed',
+        disabled && theme.disabledCursorNotAllowed,
       )}
       placeholder={placeholder}
       aria-label={ariaLabel}

@@ -14,8 +14,7 @@ const Card: FC<PropsWithChildren<CardProps>> = ({
   <div
     className={clsx(
       theme.card.base,
-      !colored && theme.card.default,
-      colored && 'bg-purple-600 text-white',
+      colored ? theme.card.colored : theme.card.default,
     )}
   >
     {children}

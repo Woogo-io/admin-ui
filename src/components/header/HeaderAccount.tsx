@@ -3,6 +3,7 @@ import React, {
   PropsWithChildren, useEffect, useRef, useState,
 } from 'react';
 import { AccountIcon } from '../../theme/icons';
+import theme from '../../theme/default';
 
 const HeaderAccount = ({ children } : PropsWithChildren<{}>) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -19,18 +20,18 @@ const HeaderAccount = ({ children } : PropsWithChildren<{}>) => {
   }, [ref]);
 
   return (
-    <li className="relative" ref={ref}>
+    <li className={theme.header.account.default} ref={ref}>
       <button
-        className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
+        className={theme.header.account.button}
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-label="Account"
         aria-haspopup="true"
         type="button"
       >
-        <AccountIcon className="w-5 h-5" />
+        <AccountIcon className={theme.header.account.icon} />
       </button>
 
-      <div className={clsx('absolute top-10 right-0 w-32 p-2 rounded bg-white dark:bg-gray-800 border-b border-purple-800 text-gray-700 dark:text-white', { hidden: !dropdownOpen })}>
+      <div className={clsx(theme.header.account.dropdown, { [theme.hidden]: !dropdownOpen })}>
         {children}
       </div>
     </li>

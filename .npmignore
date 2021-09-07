@@ -1,4 +1,4 @@
-/src
+/src/**/*
 .prettierrc.js
 .gitignore
 .eslintrc
@@ -9,3 +9,4 @@ jest.config.js
 yarn.lock
 tsconfig.json
 .npmrc
+!/src/theme/default.ts

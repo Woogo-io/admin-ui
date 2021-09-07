@@ -35,7 +35,6 @@ const RoundLoader = (props: RoundLoaderProps) => {
 RoundLoader.defaultProps = {
   width: '38px',
   height: '38px',
-  stroke: 'white',
 };
 
 export default RoundLoader;

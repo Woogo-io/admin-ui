@@ -1,4 +1,71 @@
 export default {
+  header: {
+    default: 'sticky z-10 top-0 bg-white shadow-bottom dark:bg-gray-800 max-h-16 flex items-center h-16 border-b border-purple-600',
+    container: 'flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300 w-full',
+    left: 'flex items-center',
+    menuButton: 'p-1 -ml-1 rounded-md focus:outline-none focus:shadow-outline-purple',
+    menuIcon: 'w-6 h-6',
+    title: 'text-lg font-bold text-gray-800 dark:text-gray-200 ml-2',
+    search: {
+      container: 'hidden lg:flex justify-center flex-1 lg:mr-32',
+      wrapper: 'relative w-full max-w-xl mr-6 focus-within:text-purple-500',
+      iconContainer: 'absolute inset-y-0 flex items-center pl-2',
+      icon: 'w-4 h-4',
+    },
+    right: {
+      container: 'flex items-center flex-shrink-0 space-x-6',
+    },
+    themeSelector: {
+      default: 'flex',
+      button: 'rounded-md focus:outline-none focus:shadow-outline-purple',
+      icon: 'w-5 h-5',
+    },
+    account: {
+      default: 'relative',
+      button: 'relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple',
+      icon: 'w-5 h-5',
+      dropdown: 'absolute top-10 right-0 w-32 p-2 rounded bg-white dark:bg-gray-800 border-b border-purple-800 text-gray-700 dark:text-white',
+    },
+    notify: {
+      default: 'relative',
+      button: 'relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple',
+      icon: 'w-5 h-5',
+      haveNotification: 'absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800',
+      dropdown: 'absolute top-10 right-0 w-32 p-2 rounded bg-white dark:bg-gray-800 border-b border-purple-800 text-gray-700 dark:text-white',
+    },
+  },
+  linkMenu: {
+    default: 'relative px-6 py-3',
+    link: 'inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200',
+    active: 'text-gray-800 dark:text-gray-100',
+    bar: 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg',
+    icon: 'w-5 h-5',
+    text: 'ml-4',
+  },
+  notFound: {
+    container: 'flex flex-col items-center',
+    title: 'text-6xl font-semibold text-gray-700 dark:text-gray-200 flex space-x-5 items-center mt-10',
+    icon: 'w-16 h-16 text-purple-200',
+    statusCode: '-mt-2',
+    text: 'text-gray-700 dark:text-gray-300 mt-5',
+    button: 'ml-1',
+  },
+  mainContainer: {
+    default: 'px-5 top-0 pb-5 transition-all',
+  },
+  sidebar: {
+    default: 'z-10 flex-shrink-0 w-64 overflow-y-auto bg-white dark:bg-gray-800 fixed top-0 pt-16 left-0 h-full transition-all transform',
+    close: '-translate-x-64',
+    category: {
+      default: 'w-full flex items-center mt-5 px-5 space-x-2',
+      hr: 'border-gray-500 border w-full',
+      text: 'font-bold uppercase text-xs',
+    },
+    content: 'py-4 text-gray-500 dark:text-gray-400',
+  },
+  cursorNotAllowed: 'cursor-not-allowed',
+  disabledCursorNotAllowed: 'disabled:cursor-not-allowed',
+  hidden: 'hidden',
   // Titles
   pageTitle: {
     base: 'my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200',
@@ -24,10 +91,16 @@ export default {
       info: 'text-blue-400 dark:text-blue-300',
     },
   },
+  text: 'text-gray-700 dark:text-white',
   // Pagination
   pagination: {
     base:
       'flex flex-col justify-between text-xs sm:flex-row text-gray-600 dark:text-gray-400',
+    left: 'flex items-center font-semibold tracking-wide uppercase',
+    right: {
+      default: 'flex mt-2 sm:mt-auto sm:justify-end',
+      list: 'inline-flex items-center',
+    },
     button: {
       base:
         'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-gray-600 dark:text-gray-400 focus:outline-none border border-transparent active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10',
@@ -39,6 +112,7 @@ export default {
         'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none p-2 rounded-md text-gray-600 dark:text-gray-400 focus:outline-none border border-transparent opacity-50 cursor-not-allowed',
       active:
         'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none p-2 rounded-md text-gray-600 dark:text-gray-400 focus:outline-none border border-transparent active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10',
+      icon: 'h-3 w-3',
     },
   },
   // TableFooter
@@ -49,6 +123,7 @@ export default {
   // TableRow
   tableRow: {
     base: '',
+    noResult: 'w-full text-center p-3 text-sm',
   },
   // TableHeader
   tableHeader: {
@@ -58,6 +133,8 @@ export default {
   // TableContainer
   tableContainer: {
     base: 'w-full overflow-hidden rounded-lg shadow-xs mb-8',
+    wrapper: 'w-full overflow-x-auto',
+    table: 'w-full whitespace-no-wrap table-auto',
   },
   // TableCell
   tableCell: {
@@ -99,6 +176,11 @@ export default {
       'overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none',
     sizer: 'relative w-full mt-20 mx-auto',
     content: 'border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 outline-none focus:outline-none',
+    size: {
+      small: 'max-w-sm',
+      regular: 'max-w-3xl',
+      large: 'max-w-6xl',
+    },
   },
   // ModalHeader
   modalHeader: {
@@ -163,6 +245,7 @@ export default {
       'items-center',
       'space-x-2',
     ],
+    error: 'ml-2 font-bold text-red-600 text-xs',
   },
 
   formGroup: {
@@ -242,14 +325,20 @@ export default {
   card: {
     base: 'min-w-0 rounded-lg shadow-xs overflow-hidden',
     default: 'bg-white dark:bg-gray-800',
+    colored: 'bg-purple-600 text-white',
   },
   cardBody: {
     base: 'p-4',
+  },
+  infoCard: {
+    title: 'mb-2 text-sm font-medium text-gray-600 dark:text-gray-400',
+    children: 'text-lg font-semibold text-gray-700 dark:text-gray-200',
   },
   // Button
   button: {
     base:
       'align-bottom inline-flex items-center justify-center cursor-pointer transition-colors duration-150 font-medium focus:outline-none max-h',
+    iconContainer: 'flex items-center space-x-2',
     block: 'w-full',
     size: {
       larger: 'px-10 py-4 rounded',

@@ -31,7 +31,7 @@ const FormLabel: FC<PropsWithChildren<FormLabelProps>> = ({
     >
       {children}
       { errors && (
-      <span className="ml-2 font-bold text-red-600 text-xs">
+      <span className={theme.label.error}>
         {errors}
       </span>
       )}

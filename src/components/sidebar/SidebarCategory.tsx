@@ -1,16 +1,17 @@
 import React from 'react';
+import theme from '../../theme/default';
 
 export interface SidebarCategoryProps {
   name: string;
 }
 
 const SidebarCategory = ({ name }: SidebarCategoryProps) => (
-  <div className="w-full flex items-center mt-5 px-5 space-x-2">
-    <hr className="border-gray-500 border w-full" />
-    <span className="font-bold uppercase text-xs">
+  <div className={theme.sidebar.category.default}>
+    <hr className={theme.sidebar.category.hr} />
+    <span className={theme.sidebar.category.text}>
       {name}
     </span>
-    <hr className="border-gray-500 border w-full" />
+    <hr className={theme.sidebar.category.hr} />
   </div>
 );
 

@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import React, { PropsWithChildren } from 'react';
+import theme from '../../theme/default';
 
 const MainContainer = ({ children }: PropsWithChildren<{}>) => (
-  <main className={clsx('px-5 top-0 pb-5 transition-all')}>
+  <main className={theme.mainContainer.default}>
     {children}
   </main>
 );

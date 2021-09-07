@@ -66,7 +66,6 @@ const PulseLoader = (props: PulseLoaderProps) => {
 PulseLoader.defaultProps = {
   width: '38px',
   height: '38px',
-  stroke: 'white',
 };
 
 export default PulseLoader;

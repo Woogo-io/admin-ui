@@ -3,6 +3,7 @@ import React, {
   FC, PropsWithChildren, useEffect, useRef,
 } from 'react';
 import { useSidebar } from '../providers';
+import theme from '../../theme/default';
 
 import SidebarContent from './SidebarContent';
 
@@ -27,9 +28,7 @@ const Sidebar: FC<PropsWithChildren<{}>> = (props: PropsWithChildren<{}>) => {
   return (
     <aside
       ref={ref}
-      className={clsx('z-10 flex-shrink-0 w-64 overflow-y-auto bg-white dark:bg-gray-800',
-        'fixed top-0 pt-16 left-0 h-full transition-all transform',
-        !isSidebarOpen && '-translate-x-64')}
+      className={clsx(theme.sidebar.default, !isSidebarOpen && theme.sidebar.close)}
     >
       <SidebarContent {...props} />
     </aside>

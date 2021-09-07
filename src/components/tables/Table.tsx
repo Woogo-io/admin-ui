@@ -38,8 +38,8 @@ export function Table<T>({
 
   return (
     <div className={theme.tableContainer.base}>
-      <div className="w-full overflow-x-auto">
-        <table className="w-full whitespace-no-wrap table-auto">
+      <div className={theme.tableContainer.wrapper}>
+        <table className={theme.tableContainer.table}>
           <thead className={theme.tableHeader.base}>
             <TableRow>
               {headers.map((header, index) => <TableCell key={index}>{header}</TableCell>) }
@@ -50,7 +50,7 @@ export function Table<T>({
               ? state.data.map((value) => children(value))
               : (
                 <TableRow>
-                  <td colSpan={headers.length} className="w-full text-center p-3 text-sm">No result to display.</td>
+                  <td colSpan={headers.length} className={theme.tableRow.noResult}>No result to display.</td>
                 </TableRow>
               )}
           </tbody>
@@ -58,12 +58,12 @@ export function Table<T>({
         {paginationActive && data.length > resultsPerPage && (
         <div className={theme.tableFooter.base}>
           <div className={theme.pagination.base}>
-            <span className="flex items-center font-semibold tracking-wide uppercase">
+            <span className={theme.pagination.left}>
               {`Showing ${state.page * resultsPerPage + 1} - ${state.page * resultsPerPage + state.data.length} of ${data.length}`}
             </span>
-            <div className="flex mt-2 sm:mt-auto sm:justify-end">
+            <div className={theme.pagination.right.default}>
               <nav>
-                <ul className="inline-flex items-center">
+                <ul className={theme.pagination.right.list}>
                   <li>
                     <button
                       className={state.page <= 0 ? theme.pagination.arrow.inactive : theme.pagination.arrow.active}
@@ -71,7 +71,7 @@ export function Table<T>({
                       disabled={state.page <= 0}
                       onClick={() => dispatch({ page: state.page - 1 })}
                     >
-                      <ArrowLeft className="h-3 w-3" />
+                      <ArrowLeft className={theme.pagination.arrow.icon} />
                     </button>
                   </li>
                   {(() => {
@@ -102,7 +102,7 @@ export function Table<T>({
                       disabled={state.page >= state.maxPage}
                       onClick={() => dispatch({ page: state.page + 1 })}
                     >
-                      <ArrowRight className="h-3 w-3" />
+                      <ArrowRight className={theme.pagination.arrow.icon} />
                     </button>
                   </li>
                 </ul>

@@ -45,10 +45,10 @@ const Modal: FC<PropsWithChildren<ModalProps>> = (
   if (isOpen) {
     return (
       <>
-        <div data-modal className={theme.modal.base}>
+        <div className={theme.modal.base}>
           <div
             ref={ref}
-            className={clsx(theme.modal.sizer, size === 'small' && 'max-w-sm', size === 'regular' && 'max-w-3xl', size === 'large' && 'max-w-6xl')}
+            className={clsx(theme.modal.sizer, theme.modal.size[size])}
           >
             <div className={theme.modal.content}>
               {children}

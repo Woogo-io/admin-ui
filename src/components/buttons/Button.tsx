@@ -34,7 +34,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
       theme.button.base,
       theme.button.size[size],
       theme.button[styleType],
-      disabled && 'cursor-not-allowed',
+      disabled && theme.cursorNotAllowed,
       className,
     )}
     disabled={disabled}
@@ -42,7 +42,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     {icon ? (
       <>
         {children ? (
-          <div className="flex items-center space-x-2">
+          <div className={theme.button.iconContainer}>
             <Icon icon={icon} ariaHidden={icon} className={theme.button.icon[size]} />
             <span>{children}</span>
           </div>
