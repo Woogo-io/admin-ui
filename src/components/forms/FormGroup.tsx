@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { PropsWithChildren } from 'react';
 import theme from '../../theme/default';
 
-export type FieldType = 'text' | 'email' | 'radio' | 'checkbox' | 'password' | 'select' | 'textarea';
+export type FieldType = 'text' | 'email' | 'radio' | 'checkbox' | 'password' | 'select' | 'textarea' | 'number' | 'date' | 'file' | 'color';
 
 export interface FormGroupProps {
   className?: string;
