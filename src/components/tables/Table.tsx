@@ -54,10 +54,7 @@ function Table<T>({
     if (search === '') dispatch({ searchResult: [], page: 0 });
     else {
       dispatch({
-        searchResult: data.filter((v: T) => {
-          const find = searchKey.find((key: string) => v[key].includes(search));
-          return !!find;
-        }),
+        searchResult: data.filter((v: T) => !!searchKey.find((key: string) => v[key]?.toLowerCase()?.includes(search?.toLowerCase()))),
         page: 0,
       });
     }

@@ -38,7 +38,7 @@ const Global = () => {
         </HeaderAccount>
       </Header>
       <MainContainer>
-        <Modal size="regular" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <Modal size="regular" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} z={0}>
           <ModalHeader onClose={() => setIsModalOpen(false)}>
             Header Title
           </ModalHeader>
@@ -60,10 +60,10 @@ const Global = () => {
         </div>
 
         <div className="space-x-5 mt-5">
-          <Button styleType="primary" icon="EditIcon">
+          <Button styleType="primary" icon="MetaIcon">
             Update
           </Button>
-          <Button styleType="primary" icon="DeleteIcon" />
+          <Button styleType="primary" icon="ComponentIcon" />
           <Button styleType="primary">Primary</Button>
           <Button styleType="primary" size="small">Small</Button>
           <Button styleType="outline">Outline</Button>

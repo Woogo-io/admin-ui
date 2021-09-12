@@ -182,15 +182,22 @@ export default {
   },
   // Modal
   modal: {
-    background: 'opacity-25 fixed inset-0 z-40 bg-black',
     base:
-      'overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none',
+      'overflow-x-hidden overflow-y-auto fixed inset-0 outline-none focus:outline-none bg-black bg-opacity-25',
     sizer: 'relative w-full mt-20 mx-auto',
     content: 'border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 outline-none focus:outline-none',
     size: {
       small: 'max-w-sm',
       regular: 'max-w-3xl',
       large: 'max-w-6xl',
+    },
+    z: {
+      0: 'z-0',
+      1: 'z-10',
+      2: 'z-20',
+      3: 'z-30',
+      4: 'z-40',
+      5: 'z-50',
     },
   },
   // ModalHeader

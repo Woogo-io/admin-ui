@@ -12,13 +12,14 @@ export type ModalProps = {
   size: 'small' | 'regular' | 'large'
   isOpen: boolean;
   onClose: () => void;
+  z?: 0 | 1 | 2 | 3 | 4 | 5
 };
 
 const Modal: FC<PropsWithChildren<ModalProps>> = (
   props: PropsWithChildren<ModalProps>,
 ) => {
   const {
-    children, size, isOpen, onClose,
+    children, size, isOpen, onClose, z,
   } = props;
 
   const { setModalOpen } = useTheme();
@@ -45,7 +46,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = (
   if (isOpen) {
     return (
       <>
-        <div className={theme.modal.base}>
+        <div className={clsx(theme.modal.base, theme.modal.z[z !== undefined ? z : 5])}>
           <div
             ref={ref}
             className={clsx(theme.modal.sizer, theme.modal.size[size])}
@@ -55,7 +56,6 @@ const Modal: FC<PropsWithChildren<ModalProps>> = (
             </div>
           </div>
         </div>
-        <div className={theme.modal.background} />
       </>
     );
   }
