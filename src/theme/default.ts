@@ -8,7 +8,7 @@ export default {
     title: 'text-lg font-bold text-gray-800 dark:text-gray-200 ml-2',
     search: {
       container: 'hidden lg:flex justify-center flex-1 lg:mr-32',
-      wrapper: 'relative w-full max-w-xl mr-6 focus-within:text-purple-500',
+      wrapper: 'relative w-full max-w-xl mr-6 text-gray-800 dark:text-gray-500 focus-within:text-purple-500 dark:focus-within:text-purple-500',
       iconContainer: 'absolute inset-y-0 flex items-center pl-2',
       icon: 'w-4 h-4',
     },
@@ -278,6 +278,16 @@ export default {
   },
   // Input
   input: {
+    search: [
+      'block w-full text-sm dark:text-white rounded pl-8',
+      'focus:border-purple-400',
+      'dark:border-gray-600',
+      'focus:ring-purple-600',
+      'dark:focus:border-purple-600',
+      'dark:bg-gray-700',
+      'dark:focus:ring-purple-600',
+      'disabled:opacity-50',
+    ],
     classic: [
       'block w-full text-sm dark:text-white rounded',
       'focus:border-purple-400',

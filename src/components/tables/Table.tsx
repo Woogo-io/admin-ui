@@ -9,6 +9,7 @@ import TableRow from './TableRow';
 import theme from '../../theme/default';
 import { ArrowLeft, ArrowRight } from '../../theme/icons';
 import { pagination } from '../utils/pagination';
+import InputSearch from '../forms/InputSearch';
 
 export interface TableProps<T> {
   headers: string[];
@@ -67,9 +68,8 @@ function Table<T>({
           {title}
           {!!searchKey?.length && (
           <div>
-            <input
+            <InputSearch
               type="text"
-              className={clsx(theme.input.classic)}
               placeholder="Search"
               value={search}
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch({ search: e.target.value })}
