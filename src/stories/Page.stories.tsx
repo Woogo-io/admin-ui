@@ -63,7 +63,7 @@ const Global = () => {
           <Button styleType="primary" icon="MetaIcon">
             Update
           </Button>
-          <Button styleType="primary" icon="MediaIcon" />
+          <Button styleType="primary" icon="AddIcon" />
           <Button styleType="primary">Primary</Button>
           <Button styleType="primary" size="small">Small</Button>
           <Button styleType="outline">Outline</Button>

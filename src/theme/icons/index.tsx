@@ -202,6 +202,17 @@ export const MediaIcon: FC<SvgProps> = ({ className }: SvgProps) => (
   </svg>
 );
 
+export const AddIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg viewBox="0 0 419.84 419.84" className={className} fill="currentColor">
+    <path d="M209.92,0C94.72,0,0,94.72,0,209.92s94.72,209.92,209.92,209.92s209.92-94.72,209.92-209.92S325.12,0,209.92,0z
+      M308.224,229.376h-78.848v78.848c0,11.264-8.704,19.456-19.456,19.456s-19.456-8.704-19.456-19.456v-78.848h-78.848
+      c-11.264,0-19.456-8.704-19.456-19.456s8.192-19.456,19.456-19.456h78.848v-78.848c0-11.264,8.704-19.456,19.456-19.456
+      c10.752,0,19.456,8.704,19.456,19.456v78.848h78.848c11.264,0,19.456,8.704,19.456,19.456
+      C327.68,220.672,318.976,229.376,308.224,229.376z"
+    />
+  </svg>
+);
+
 const Icons = {
   BellIcon,
   MenuIcon,
@@ -221,6 +232,7 @@ const Icons = {
   ComponentIcon,
   MetaIcon,
   MediaIcon,
+  AddIcon,
 };
 
 export type IconType = 'BellIcon'
@@ -240,7 +252,8 @@ export type IconType = 'BellIcon'
 | 'ValidIcon'
 | 'ComponentIcon'
 | 'MetaIcon'
-| 'MediaIcon';
+| 'MediaIcon'
+| 'AddIcon';
 
 type IconProps = {
   icon: IconType;
