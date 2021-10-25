@@ -28,6 +28,7 @@ export default {
 
 const Global = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
   return (
     <>
       <Header title="Woogo UI">
@@ -160,9 +161,15 @@ const Global = () => {
                   data={[{ id: '1', name: 'Jean-Michel' }, { id: '2', name: 'Édouard' }]}
                   keySearch={['name']}
                   limit={10}
-                  onClick={({ row }) => console.log(row.id)}
+                  onClick={({ row }) => setSelected(row)}
+                  selected={selected}
+                  selectedComponent={(row) => (
+                    <>
+                      {row.name}
+                    </>
+                  )}
                 >
-                  {({ row }) => (<div className="hover:bg-purple-600 block w-full">{row.name}</div>)}
+                  {(row) => (<div className="hover:bg-purple-600 block w-full">{row.name}</div>)}
                 </SelectSearch>
                 <FormGroup>
                   <FormLabel htmlFor="firstName" errors={touched.firstName && errors.firstName}>

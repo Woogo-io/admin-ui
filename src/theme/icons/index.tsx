@@ -213,6 +213,24 @@ export const AddIcon: FC<SvgProps> = ({ className }: SvgProps) => (
   </svg>
 );
 
+export const AngleDownIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 320 512">
+    <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+  </svg>
+);
+
+export const TableListIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M448 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V96C512 60.65 483.3 32 448 32zM64 96h64v64H64V96zM64 224h64v64H64V224zM64 416v-64h64v64H64zM448 416H192v-64h256V416zM448 288H192V224h256V288zM448 160H192V96h256V160z" />
+  </svg>
+);
+
+export const BoxIcon: FC<SvgProps> = ({ className }: SvgProps) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M228.3 216.1L320 64L69.77 32.13C62.9 31.26 56.24 34.77 53.24 41.02L1.755 143.8C-2.87 153.1 2.039 164.1 11.79 166.8l197.1 56.53C216.8 225.4 224.4 222.4 228.3 216.1zM638.3 143.8l-51.49-102.8c-3-6.25-9.757-9.758-16.63-8.883L320 64l91.74 152.1c3.752 6.25 11.38 9.261 18.51 7.261l197.9-56.51C638 164 642.8 153 638.3 143.8zM425.8 257.3c-17 0-32.88-8.949-41.5-23.24L320 128L255.8 234C247.1 248.4 231.3 257.4 214.3 257.4c-4.5 0-9-.6211-13.25-1.863L64 216.5v176.1c0 14.67 9.999 27.35 24.25 30.83l216.1 53.82c10.25 2.486 20.88 2.486 31 0l216.4-53.82C565.1 420.7 576 408 576 393.5V216.5l-137 38.9C434.8 256.6 430.3 257.3 425.8 257.3z" />
+  </svg>
+);
+
 const Icons = {
   BellIcon,
   MenuIcon,
@@ -233,6 +251,9 @@ const Icons = {
   MetaIcon,
   MediaIcon,
   AddIcon,
+  AngleDownIcon,
+  TableListIcon,
+  BoxIcon,
 };
 
 export type IconType = 'BellIcon'
@@ -253,7 +274,10 @@ export type IconType = 'BellIcon'
 | 'ComponentIcon'
 | 'MetaIcon'
 | 'MediaIcon'
-| 'AddIcon';
+| 'AddIcon'
+| 'AngleDownIcon'
+| 'TableListIcon'
+| 'BoxIcon';
 
 type IconProps = {
   icon: IconType;

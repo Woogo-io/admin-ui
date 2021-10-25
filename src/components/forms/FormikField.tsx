@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FC, PropsWithChildren } from 'react';
+import React, { ChangeEvent, FC, PropsWithChildren } from 'react';
 import { Field } from 'formik';
 import theme from '../../theme/default';
 import { FieldType } from './FormGroup';
@@ -15,6 +15,7 @@ export type FormikFieldProps = {
   multiple?: boolean;
   component?: string;
   errors?: boolean;
+  onChange?: (e: ChangeEvent<any>) => any;
 };
 
 const FormikField: FC<FormikFieldProps> = ({
@@ -29,6 +30,7 @@ const FormikField: FC<FormikFieldProps> = ({
   multiple,
   children,
   errors,
+  onChange,
 }: PropsWithChildren<FormikFieldProps>) => {
   let selectedTheme: string[] = theme.input.classic;
   if (errors) {
@@ -58,6 +60,7 @@ const FormikField: FC<FormikFieldProps> = ({
       aria-label={ariaLabel}
       component={component}
       multiple={multiple}
+      onChange={onChange}
     >
       {children}
     </Field>
