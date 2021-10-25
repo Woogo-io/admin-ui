@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import React, {
   ChangeEvent, ReactNode, useEffect, useReducer, useRef,
 } from 'react';
-import { Icon } from '../..';
+import { AngleDownIcon } from '../../theme/icons';
 
 import theme from '../../theme/default';
 
-interface SelectSearchProps<T> {
+export type SelectSearchProps<T> = {
   data: T[];
   limit?: number;
   keySearch?: string[];
@@ -16,7 +16,7 @@ interface SelectSearchProps<T> {
   onClick?: (params: { row: T, index: number }) => any;
   selected?: T;
   selectedComponent?: (row: T) => ReactNode
-}
+};
 
 function SelectSearch<T>({
   children, className, data,
@@ -79,7 +79,7 @@ function SelectSearch<T>({
             {selectedComponent ? selectedComponent(selected) : children(selected)}
           </div>
           <div>
-            <Icon icon="AngleDownIcon" ariaHidden="true" className="w-5 h-5" />
+            <AngleDownIcon className="w-5 h-5" />
           </div>
         </div>
       ) : (
