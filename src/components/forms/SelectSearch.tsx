@@ -31,7 +31,8 @@ function SelectSearch<T>({
 
   const { search, isFocus, searchArray } = state;
 
-  const ref = useRef(null);
+  const containerRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const tempSearch = [];
@@ -57,17 +58,21 @@ function SelectSearch<T>({
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) setState({ isFocus: false });
+      if (containerRef.current && !containerRef.current.contains(event.target)) setState({ isFocus: false });
       else setState({ isFocus: true });
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref]);
+  }, [containerRef, inputRef]);
+
+  useEffect(() => {
+    if (isFocus) inputRef.current.focus();
+  }, [isFocus, inputRef]);
 
   return (
-    <div className="w-full relative" ref={ref}>
+    <div className="w-full relative" ref={containerRef}>
       {selected && !isFocus ? (
         <div className="w-full flex items-center justify-between dark:bg-gray-700 border dark:border-gray-600 dark:text-white p-2 rounded">
           <div>
@@ -85,6 +90,7 @@ function SelectSearch<T>({
             onChange={(e: ChangeEvent<HTMLInputElement>) => setState({ search: e.target.value })}
             placeholder={placeholder || 'Search'}
             className={clsx(theme.input.classic)}
+            ref={inputRef}
           />
           <div className={
         clsx(
@@ -103,7 +109,7 @@ function SelectSearch<T>({
                     if (onClick) onClick({ row, index });
                     setState({ search: '', isFocus: false });
                   }}
-                  className="block w-full"
+                  className="block w-full text-left"
                 >
                   {children(row)}
                 </button>
