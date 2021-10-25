@@ -278,6 +278,11 @@ export default {
   },
   // Input
   input: {
+    dropdown: [
+      'absolute w-full p-2 top-12 left-0 text-sm',
+      'text-white dark:border-gray-600 bg-gray-700',
+      'border rounded border-gray-600',
+    ],
     search: [
       'block w-full text-sm dark:text-white rounded pl-8',
       'focus:border-purple-400',

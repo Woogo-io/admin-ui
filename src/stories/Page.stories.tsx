@@ -20,6 +20,7 @@ import {
   PulseLoader, RoundLoader, SidebarCategory,
   HeaderAccount, HeaderNotify, TableRow, TableCell,
 } from '../index';
+import SelectSearch from '../components/forms/SelectSearch';
 
 export default {
   title: 'Sample/DefaultPage',
@@ -155,6 +156,14 @@ const Global = () => {
           >
             {({ errors, touched }) => (
               <Form className="flex flex-col space-y-4 w-1/2 p-2">
+                <SelectSearch
+                  data={[{ id: '1', name: 'Jean-Michel' }, { id: '2', name: 'Édouard' }]}
+                  keySearch={['name']}
+                  limit={10}
+                  onClick={({ row }) => console.log(row.id)}
+                >
+                  {({ row }) => (<div className="hover:bg-purple-600 block w-full">{row.name}</div>)}
+                </SelectSearch>
                 <FormGroup>
                   <FormLabel htmlFor="firstName" errors={touched.firstName && errors.firstName}>
                     FirstName
@@ -165,7 +174,6 @@ const Global = () => {
                   <FormLabel htmlFor="lastName">LastName</FormLabel>
                   <FormikField name="lastName" type="text" placeholder="Your firstname" />
                 </FormGroup>
-
                 <FormGroup type="checkbox">
                   <FormLabel type="checkbox">
                     <FormikField name="agreeWithTerms" type="checkbox" errors={errors.agreeWithTerms && touched.agreeWithTerms} />
