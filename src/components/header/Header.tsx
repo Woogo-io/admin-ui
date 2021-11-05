@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, ReactNode } from 'react';
 import theme from '../../theme/default';
 
 import {
@@ -11,7 +11,7 @@ import {
 import { useSidebar, useTheme } from '../providers';
 
 interface HeaderProps {
-  title: string;
+  title: ReactNode;
   SearchComponent?: () => JSX.Element;
 }
 

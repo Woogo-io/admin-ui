@@ -31,7 +31,7 @@ const Global = () => {
   const [selected, setSelected] = useState(null);
   return (
     <>
-      <Header title="Woogo UI">
+      <Header title={<p>Woogo UI</p>}>
         <HeaderNotify haveNotification>
           <span>View All</span>
         </HeaderNotify>

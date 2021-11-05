@@ -21,13 +21,13 @@ export default {
       icon: 'w-5 h-5',
     },
     account: {
-      default: 'relative',
+      default: 'relative flex item-center',
       button: 'relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple',
       icon: 'w-5 h-5',
       dropdown: 'absolute top-10 right-0 w-32 p-2 rounded bg-white dark:bg-gray-800 border-b border-purple-800 text-gray-700 dark:text-white',
     },
     notify: {
-      default: 'relative',
+      default: 'relative flex item-center',
       button: 'relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple',
       icon: 'w-5 h-5',
       haveNotification: 'absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800',

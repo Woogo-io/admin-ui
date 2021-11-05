@@ -1,11 +1,22 @@
 import clsx from 'clsx';
 import React, {
-  PropsWithChildren, useEffect, useRef, useState,
+  ReactNode, useEffect, useRef, useState,
 } from 'react';
 import { AccountIcon } from '../../theme/icons';
 import theme from '../../theme/default';
 
-const HeaderAccount = ({ children } : PropsWithChildren<{}>) => {
+export interface HeaderAccountProps {
+  profileImg?: {
+    src: string;
+    width?: string | number;
+    height?: string | number;
+    alt?: string;
+    className?: string;
+  },
+  children?: ReactNode
+}
+
+const HeaderAccount = ({ children, profileImg }: HeaderAccountProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const ref = useRef(null);
 
@@ -28,7 +39,15 @@ const HeaderAccount = ({ children } : PropsWithChildren<{}>) => {
         aria-haspopup="true"
         type="button"
       >
-        <AccountIcon className={theme.header.account.icon} />
+        {profileImg ? (
+          <img
+            alt={profileImg.alt}
+            src={profileImg.src}
+            width={profileImg.width}
+            height={profileImg.height}
+            className="w-6 h-6 rounded"
+          />
+        ) : <AccountIcon className={theme.header.account.icon} />}
       </button>
 
       <div className={clsx(theme.header.account.dropdown, { [theme.hidden]: !dropdownOpen })}>
