@@ -164,12 +164,12 @@ const Global = () => {
                   onClick={({ row }) => setSelected(row)}
                   selected={selected}
                   selectedComponent={(row) => (
-                    <>
+                    <div className="text-sm">
                       {row.name}
-                    </>
+                    </div>
                   )}
                 >
-                  {(row) => (<div className="hover:bg-purple-600 block w-full">{row.name}</div>)}
+                  {(row) => (<div className="hover:bg-purple-600 block w-full text-left p-2">{row.name}</div>)}
                 </SelectSearch>
                 <FormGroup>
                   <FormLabel htmlFor="firstName" errors={touched.firstName && errors.firstName}>

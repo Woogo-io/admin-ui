@@ -15,6 +15,9 @@ export type FormikFieldProps = {
   multiple?: boolean;
   component?: string;
   errors?: boolean;
+  step?: number;
+  min?: number;
+  max?: number;
 };
 
 const FormikField: FC<FormikFieldProps> = ({
@@ -29,6 +32,9 @@ const FormikField: FC<FormikFieldProps> = ({
   multiple,
   children,
   errors,
+  step,
+  min,
+  max,
 }: PropsWithChildren<FormikFieldProps>) => {
   let selectedTheme: string[] = theme.input.classic;
   if (errors) {
@@ -47,6 +53,9 @@ const FormikField: FC<FormikFieldProps> = ({
     <Field
       name={name}
       type={type}
+      step={step}
+      min={min}
+      max={max}
       value={value}
       disabled={disabled}
       className={clsx(
