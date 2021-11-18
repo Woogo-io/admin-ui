@@ -6,8 +6,7 @@ import * as Yup from 'yup';
 import {
   Form, Formik,
 } from 'formik';
-import { convertToRaw, EditorState } from 'draft-js';
-import DraftToHtml from 'draftjs-to-html';
+import { EditorState } from 'draft-js';
 import {
   NextLinkMenu, ReactLinkMenu,
   Header,
@@ -31,7 +30,7 @@ const Global = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
-  console.log(DraftToHtml(convertToRaw(editorState.getCurrentContent())));
+
   return (
     <>
       <Header title={<p>Woogo UI</p>}>
