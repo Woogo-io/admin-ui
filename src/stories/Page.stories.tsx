@@ -6,19 +6,20 @@ import * as Yup from 'yup';
 import {
   Form, Formik,
 } from 'formik';
+import { convertToRaw, EditorState } from 'draft-js';
+import DraftToHtml from 'draftjs-to-html';
 import {
   NextLinkMenu, ReactLinkMenu,
   Header,
   InfoCard, MainContainer, PageTitle, SectionTitle, Sidebar, SidebarProvider, ThemeProvider,
   FormikField, FormLabel, FormGroup,
-
   Table,
   Badge,
   Button,
   Text,
   Modal, ModalBody, ModalFooter, ModalHeader,
   PulseLoader, RoundLoader, SidebarCategory,
-  HeaderAccount, HeaderNotify, TableRow, TableCell,
+  HeaderAccount, HeaderNotify, TableRow, TableCell, RichEditor,
 } from '../index';
 import SelectSearch from '../components/forms/SelectSearch';
 
@@ -29,6 +30,8 @@ export default {
 const Global = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selected, setSelected] = useState(null);
+  const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
+  console.log(DraftToHtml(convertToRaw(editorState.getCurrentContent())));
   return (
     <>
       <Header title={<p>Woogo UI</p>}>
@@ -218,6 +221,13 @@ const Global = () => {
                   </FormLabel>
                   <FormikField name="message" type="textarea" component="textarea" placeholder="Your message" />
                 </FormGroup>
+
+                <RichEditor
+                  editorState={editorState}
+                  onChange={setEditorState}
+                  placeholder="Your Text"
+                  // blockRendererFn={}
+                />
 
                 <div className="flex items-end justify-end">
                   <Button type="submit">Submit</Button>

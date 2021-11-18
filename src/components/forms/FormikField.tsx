@@ -73,13 +73,4 @@ const FormikField: FC<FormikFieldProps> = ({
   );
 };
 
-FormikField.defaultProps = {
-  name: undefined,
-  className: undefined,
-  placeholder: undefined,
-  ariaLabel: undefined,
-  type: 'text',
-  disabled: false,
-};
-
 export default FormikField;

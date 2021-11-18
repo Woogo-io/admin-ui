@@ -38,8 +38,5 @@ const FormLabel: FC<PropsWithChildren<FormLabelProps>> = ({
     </label>
   );
 };
-FormLabel.defaultProps = {
-  className: '',
-};
 
 export default FormLabel;
