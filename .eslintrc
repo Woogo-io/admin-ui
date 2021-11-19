@@ -9,6 +9,7 @@
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
-    "react/button-has-type" :"off"
+    "react/button-has-type" :"off",
+    "react/default-props-match-prop-types": "off"
   }
 }
