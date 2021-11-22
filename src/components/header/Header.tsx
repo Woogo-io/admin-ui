@@ -3,12 +3,10 @@ import theme from '../../theme/default';
 
 import {
   MenuIcon,
-  MoonIcon,
   SearchIcon,
-  SunIcon,
 } from '../../theme/icons';
 
-import { useSidebar, useTheme } from '../providers';
+import { useSidebar } from '../providers';
 
 interface HeaderProps {
   title: ReactNode;
@@ -20,11 +18,6 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
     title, SearchComponent, children,
   } = props;
   const { isSidebarOpen, setIsSidebarOpen, buttonRef } = useSidebar();
-  const { theme: themeColor, toggleTheme } = useTheme();
-
-  const handleThemeClick = () => {
-    toggleTheme(themeColor === 'dark' ? 'light' : 'dark');
-  };
 
   return (
     <header className={theme.header.default}>
@@ -56,20 +49,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
           </div>
         )}
         <ul className={theme.header.right.container}>
-          <li className={theme.header.themeSelector.default}>
-            <button
-              className={theme.header.themeSelector.button}
-              onClick={handleThemeClick}
-              aria-label="Toggle color mode"
-              type="button"
-            >
-              {themeColor === 'dark' ? (
-                <SunIcon className={theme.header.themeSelector.icon} aria-hidden="true" />
-              ) : (
-                <MoonIcon className={theme.header.themeSelector.icon} aria-hidden="true" />
-              )}
-            </button>
-          </li>
+
           {children}
         </ul>
       </div>

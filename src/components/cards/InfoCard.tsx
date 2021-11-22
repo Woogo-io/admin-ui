@@ -13,14 +13,12 @@ const InfoCard: FC<PropsWithChildren<InfoCardProps>> = ({
   children,
 }: PropsWithChildren<InfoCardProps>) => (
   <Card>
-    <CardBody className="flex items-center">
-      <div>
-        <p className={theme.infoCard.title}>
-          {title}
-        </p>
-        <p className={theme.infoCard.children}>
-          {children}
-        </p>
+    <CardBody className="flex flex-col">
+      <div className={theme.infoCard.title}>
+        {title}
+      </div>
+      <div className={theme.infoCard.children}>
+        {children}
       </div>
     </CardBody>
   </Card>

@@ -18,9 +18,8 @@ import {
   Text,
   Modal, ModalBody, ModalFooter, ModalHeader,
   PulseLoader, RoundLoader, SidebarCategory,
-  HeaderAccount, HeaderNotify, TableRow, TableCell, RichEditor,
+  HeaderAccount, HeaderNotify, TableRow, TableCell, RichEditor, HeaderThemeSelector, SelectSearch,
 } from '../index';
-import SelectSearch from '../components/forms/SelectSearch';
 
 export default {
   title: 'Sample/DefaultPage',
@@ -34,6 +33,7 @@ const Global = () => {
   return (
     <>
       <Header title={<p>Woogo UI</p>}>
+        <HeaderThemeSelector />
         <HeaderNotify haveNotification>
           <span>View All</span>
         </HeaderNotify>
