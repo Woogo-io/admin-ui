@@ -256,10 +256,10 @@ export const DefaultReact = () => (
 
         <Sidebar>
           <ReactLinkMenu to="/" icon="BellIcon" name="Test" />
-          <ReactLinkMenu to="/" icon="HomeIcon" name="Test" />
+          <ReactLinkMenu to="/t" icon="HomeIcon" name="Test" />
           <SidebarCategory name="Content" />
-          <ReactLinkMenu to="/" icon="LanguageIcon" name="Test" />
-          <ReactLinkMenu to="/" icon="PageIcon" name="Test" />
+          <ReactLinkMenu to="/tt" icon="LanguageIcon" name="Test" />
+          <ReactLinkMenu to="/ttt" icon="PageIcon" name="Test" />
         </Sidebar>
 
         <Global />
