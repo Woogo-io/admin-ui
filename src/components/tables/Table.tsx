@@ -13,6 +13,7 @@ import InputSearch from '../forms/InputSearch';
 
 export interface TableProps<T> {
   headers: string[];
+  headerComponent?: (headers: string[]) => ReactNode;
   data: T[];
   paginationActive?: boolean;
   resultsPerPage?: number;
@@ -23,6 +24,7 @@ export interface TableProps<T> {
 
 function Table<T>({
   headers,
+  headerComponent,
   data,
   children,
   paginationActive,
@@ -83,9 +85,11 @@ function Table<T>({
         <div className={theme.tableContainer.wrapper}>
           <table className={theme.tableContainer.table}>
             <thead className={theme.tableHeader.base}>
-              <TableRow>
-                {headers.map((header, index) => <TableCell key={index}>{header}</TableCell>) }
-              </TableRow>
+              {headerComponent ? headerComponent(headers) : (
+                <TableRow>
+                  {headers.map((header, index) => <TableCell key={index}>{header}</TableCell>) }
+                </TableRow>
+              )}
             </thead>
             <tbody className={theme.tableBody.base}>
               {stateData.length

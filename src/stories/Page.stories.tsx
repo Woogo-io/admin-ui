@@ -102,6 +102,15 @@ const Global = () => {
           <div className="w-1/2 p-2">
             <Table
               headers={['Ref Command', 'TVA', 'Name', 'Quantity', 'Price', '']}
+              headerComponent={(headers: string[]) => (
+                <TableRow>
+                  {headers.map((v) => (
+                    <TableCell key={v}>
+                      {v}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              )}
               searchKey={['tva', 'name', 'id']}
               title={(
                 <Text className="font-medium flex items-center">
